@@ -10,7 +10,7 @@ tags:
   - D3.js
   - Node.js
   - MongoDB
-github: "https://github.com/username/ecommerce-dashboard"
+link: "https://github.com/username/ecommerce-dashboard"
 # redirect: "https://ecommerce-analytics-demo.com"
 importance: 1
 ---

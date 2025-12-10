@@ -10,7 +10,7 @@ tags:
   - Docker
   - PostgreSQL
   - FastAPI
-github: "https://github.com/username/security-assessment"
+link: "https://github.com/username/security-assessment"
 # redirect: "https://security-assessment-demo.com"
 importance: 1
 ---

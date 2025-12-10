@@ -9,7 +9,7 @@ tags:
   - Redis
   - PostgreSQL
   - Docker
-github: "https://github.com/username/trading-platform"
+link: "https://github.com/username/trading-platform"
 # redirect: "https://trading-platform-demo.com"
 importance: 1
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "IPTV and Movie Streaming Application"
+title: "TV and Movie Streaming Application"
 description: "Cross-platform application built with Flutter for streaming on-demand movies and live TV channels through HLS/HTTP links loaded from M3U8 files."
 category: 
   - 'Dev'
@@ -13,7 +13,7 @@ tags:
   - NoSQL
   - Mobile Development
   - Desktop
-github: "https://github.com/dordazrodriguez/IPTV-and-Movie-App"
+link: "https://github.com/dordazrodriguez/IPTV-and-Movie-App"
 importance: 1
 ---
 

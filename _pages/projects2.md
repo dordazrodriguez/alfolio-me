@@ -170,7 +170,11 @@ horizontal: false
                   </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                  {% if project.github %}
+                  {% if project.link %}
+                    <a href="{{ project.link }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                      <i class="fas fa-link mr-1"></i> Link
+                    </a>
+                  {% elsif project.github %}
                     <a href="{{ project.github }}" class="btn btn-sm btn-outline-primary" target="_blank">
                       <i class="fas fa-link mr-1"></i> Link
                     </a>

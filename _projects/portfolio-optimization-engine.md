@@ -9,7 +9,7 @@ tags:
   - Pandas
   - Scikit-learn
   - Jupyter
-github: "https://github.com/username/portfolio-optimization"
+link: "https://github.com/username/portfolio-optimization"
 # redirect: "https://portfolio-optimization-demo.com"
 importance: 1
 ---

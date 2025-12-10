@@ -12,7 +12,7 @@ tags:
   - Analytics
   - Seaborn
   - Machine Learning
-github: "https://colab.research.google.com/drive/1tpmXADD_4HdJf7w9oq9_cX5C19871uLD?usp=sharing"
+link: "https://colab.research.google.com/drive/1tpmXADD_4HdJf7w9oq9_cX5C19871uLD?usp=sharing"
 # redirect: "https://colab.research.google.com/drive/1tpmXADD_4HdJf7w9oq9_cX5C19871uLD?usp=sharing"
 importance: 1
 ---

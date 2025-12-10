@@ -1,0 +1,68 @@
+---
+layout: page
+title: "Cryptocurrency Trading System"
+description: "Full-stack automated trading system with real-time market data processing, 26 technical indicators, and 170+ engineered ML features. Features Flask REST API, React dashboard, Random Forest/LightGBM models, PPO reinforcement learning agent, and ATR-based risk management."
+category: 
+  - 'Financial'
+  - 'Quant'
+  - 'AI'
+img: https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png
+tags:
+  - Python
+  - Flask
+  - React
+  - Machine Learning
+  - Reinforcement Learning
+  - Docker
+  - Full Stack
+  - Data Science
+link: "https://github.com/dordazrodriguez/CryptoTradingSystem"
+importance: 1
+---
+
+## Key Features
+
+- **Real-time Market Data Processing**: Continuous monitoring and processing of cryptocurrency market data
+- **26 Technical Indicators**: Comprehensive technical analysis with multiple indicators
+- **170+ ML Features**: Extensive feature engineering for machine learning models
+- **Flask REST API**: Backend API for data processing and trading logic
+- **React Dashboard**: Modern frontend interface for monitoring and control
+- **Machine Learning Models**: Random Forest and LightGBM for price prediction
+- **Reinforcement Learning**: PPO (Proximal Policy Optimization) agent for trading decisions
+- **Risk Management**: ATR-based position sizing and risk controls
+- **Docker Deployment**: Containerized for 24/7 continuous operation
+
+## Technologies
+
+- Python
+- Flask
+- React
+- Machine Learning (Random Forest, LightGBM)
+- Reinforcement Learning (PPO)
+- Docker
+- Real-time Data Processing
+
+## Screenshots
+
+### Main Dashboard
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="max-width: 80%;">
+
+### Dashboard Analytics
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Analytics.png" alt="Dashboard Analytics" style="max-width: 80%;">
+
+### Dashboard Trades
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Dashboard Trades" style="max-width: 80%;">
+
+### Performance Indicators
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="max-width: 80%;">
+
+### ML Validation Metrics
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="max-width: 80%;">
+
+### Alpaca Paper Trade Dashboard
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 80%;">
+
+## Links
+
+- GitHub: <a href="https://github.com/dordazrodriguez/CryptoTradingSystem" targer="_blank"> https://github.com/dordazrodriguez/CryptoTradingSystem </a>
+

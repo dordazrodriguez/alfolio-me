@@ -11,7 +11,7 @@ tags:
   - HTML
   - CSS
   - Portfolio
-github: "https://github.com/dordazrodriguez/portfolio"
+link: "https://github.com/dordazrodriguez/portfolio"
 # redirect: "https://dordazrodriguez.github.io/portfolio"
 importance: 1
 ---

@@ -18,8 +18,16 @@ layout: default
       </div>
       
       <div class="project-links">
-        {% if page.gitUrl %}
+        {% if page.link %}
+        <a href="{{ page.link }}" target="_blank" class="btn btn-sm btn-github">
+          <i class="fab fa-github"></i> Link
+        </a>
+        {% elsif page.gitUrl %}
         <a href="{{ page.gitUrl }}" target="_blank" class="btn btn-sm btn-github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        {% elsif page.github %}
+        <a href="{{ page.github }}" target="_blank" class="btn btn-sm btn-github">
           <i class="fab fa-github"></i> GitHub
         </a>
         {% endif %}

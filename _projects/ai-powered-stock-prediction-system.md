@@ -8,7 +8,7 @@ tags:
   - finance
   - python
   - tensorflow
-github: "https://github.com/yourusername/stock-prediction"
+link: "https://github.com/yourusername/stock-prediction"
 # redirect: "https://yourdemo.com/stock-prediction"
 importance: 1
 ---

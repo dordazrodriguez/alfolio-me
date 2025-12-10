@@ -10,7 +10,7 @@ tags:
   - TypeScript
   - Tailwind CSS
   - Framer Motion
-github: "https://github.com/yourusername/portfolio-site"
+link: "https://github.com/yourusername/portfolio-site"
 ---
 
 <style>

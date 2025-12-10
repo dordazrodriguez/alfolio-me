@@ -9,7 +9,7 @@ tags:
   - Analytics
   - Certification
   - Machine Learning
-github: "https://colab.research.google.com/drive/18Y84Z4yJi0lUAJBw9mIc9j8DiGmwpGrV?usp=sharing"
+link: "https://colab.research.google.com/drive/18Y84Z4yJi0lUAJBw9mIc9j8DiGmwpGrV?usp=sharing"
 # redirect: "https://www.datacamp.com/certificate/DS001234"
 importance: 1
 ---
