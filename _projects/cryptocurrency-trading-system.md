@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Automated Self-Improving Cryptocurrency Trading System"
+title: "Automated Self-Improving Crypto Trading System"
 description: "Full-stack automated trading system with real-time market data processing, 26 technical indicators, and 170+ engineered ML features. Features Flask REST API, React dashboard, Random Forest/LightGBM models, PPO reinforcement learning agent, and ATR-based risk management."
 category: 
   - 'Financial'
