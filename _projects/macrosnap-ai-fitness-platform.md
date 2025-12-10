@@ -30,7 +30,7 @@ importance: 1
 
 ## Key Features
 
-- **Instant Food Logging**: Photo-based food recognition using Computer Vision and Large Language Models
+- **Instant Food Logging**: Photo-based food recognition using Computer Vision and Multimodal Large Language Models
 - **AI-Powered Coach**: Intelligent coaching and recommendations
 - **Goal Tracking**: Comprehensive goal setting and progress monitoring
 - **Food Journal**: Detailed food logging and nutrition tracking
