@@ -50,11 +50,11 @@ horizontal: false
 
     <!-- Filter Section (Vertical Layout) -->
     <div class="col-12 mb-4" id="filter-section-horizontal">
-      <div class="card filter-card-horizontal" style="box-shadow: none !important; border: none !important; outline: none !important;">
+      <div class="card filter-card-horizontal">
         <div class="card-body">
           <div class="filter-section-horizontal">
             <!-- Search Section -->
-            <div class="mb-3">
+            <div class="mb-4">
               <div class="search-container-horizontal">
                 <div class="search-input-wrapper">
                   <i class="fas fa-search search-icon"></i>
@@ -69,19 +69,19 @@ horizontal: false
                   </button>
                 </div>
               </div>
-              <div id="search-tags" class="mt-1 d-flex flex-wrap"></div>
+              <div id="search-tags" class="mt-2 d-flex flex-wrap"></div>
             </div>
             
             <!-- Active Filters Section -->
             <div id="active-filters-section" class="d-none mb-3">
               <div id="active-filters" class="d-flex flex-wrap align-items-center mb-2" style="gap: 0.5rem;"></div>
-              <button id="reset-filters" class="btn btn-sm" style="background-color: transparent; border: 1px solid rgba(0, 0, 0, 0.1); color: #64748b; font-weight: 500; padding: 0.25rem 0.5rem; font-size: 0.75rem;">
+              <button id="reset-filters" class="btn btn-sm reset-filters-btn">
                 <i class="fas fa-sync-alt mr-1"></i> Reset All
               </button>
             </div>
 
             <!-- Categories Section -->
-            <div class="mb-3">
+            <div class="mb-4">
               <h6 class="filter-heading-horizontal filter-collapse-toggle" style="cursor: pointer; user-select: none; margin-bottom: 0.5rem;">
                 <i class="fas fa-folder"></i>
                 <span>Categories</span>
@@ -98,7 +98,7 @@ horizontal: false
             </div>
 
             <!-- Technologies Section -->
-            <div class="mb-2">
+            <div class="mb-3">
               <h6 class="filter-heading-horizontal filter-collapse-toggle" style="cursor: pointer; user-select: none; margin-bottom: 0.5rem;">
                 <i class="fas fa-tags"></i>
                 <span>Technologies</span>
@@ -213,137 +213,111 @@ horizontal: false
     display: none;
   }
   
+  /* Enhanced Filter Card Styling */
   .filter-card-horizontal {
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0;
-    overflow: visible;
-    background: transparent !important;
-    outline: none !important;
-  }
-  
-  .filter-card-horizontal:focus,
-  .filter-card-horizontal:active,
-  .filter-card-horizontal:hover {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
   }
   
   html[data-theme='light'] .filter-card-horizontal {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
   html[data-theme='dark'] .filter-card-horizontal {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   }
   
-  .filter-card-horizontal .card {
-    border: none !important;
-    outline: none !important;
+  .filter-card-horizontal:hover {
+    transform: translateY(-2px);
   }
   
-  .filter-card-horizontal .card:focus,
-  .filter-card-horizontal .card:active,
-  .filter-card-horizontal .card:hover {
-    outline: none !important;
-    border: none !important;
+  html[data-theme='light'] .filter-card-horizontal:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  html[data-theme='dark'] .filter-card-horizontal:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
   }
   
   .filter-card-horizontal .card-body {
-    padding: 0.75rem 0;
-    border: none !important;
-    outline: none !important;
-  }
-  
-  /* Remove only the container border/outline/shadow, not child elements */
-  #filter-section-horizontal {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Remove border/outline/shadow from the card container only */
-  #filter-section-horizontal > .card,
-  #filter-section-horizontal > .card.filter-card-horizontal {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Remove border/outline from card-body container only */
-  #filter-section-horizontal > .card > .card-body {
-    outline: none !important;
-    border: none !important;
-  }
-  
-  /* Remove pseudo-elements from the card container only */
-  .filter-card-horizontal::before,
-  .filter-card-horizontal::after {
-    display: none !important;
-  }
-  
-  /* Override Bootstrap card defaults for filter card only */
-  .filter-card-horizontal.card {
-    box-shadow: none !important;
-    border: none !important;
-    outline: none !important;
-  }
-  
-  /* Remove shadow from col-12 container if any */
-  #filter-section-horizontal.col-12 {
-    box-shadow: none !important;
-    border: none !important;
-    outline: none !important;
+    padding: 1.5rem;
   }
   
   .filter-heading-horizontal {
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
   }
   
   html[data-theme='light'] .filter-heading-horizontal {
-    color: #64748b;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding-bottom: 0.5rem;
+    color: #475569;
+    background: rgba(0, 0, 0, 0.02);
+    border-bottom: 2px solid rgba(2, 132, 199, 0.1);
   }
   
   html[data-theme='dark'] .filter-heading-horizontal {
-    color: #94a3b8;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding-bottom: 0.5rem;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+  }
+  
+  .filter-heading-horizontal:hover {
+    transform: translateX(2px);
+  }
+  
+  html[data-theme='light'] .filter-heading-horizontal:hover {
+    background: rgba(0, 0, 0, 0.04);
+    border-bottom-color: rgba(2, 132, 199, 0.2);
+  }
+  
+  html[data-theme='dark'] .filter-heading-horizontal:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom-color: rgba(56, 189, 248, 0.3);
   }
   
   /* Collapsible filter sections */
   .filter-collapse-toggle {
-    transition: background-color 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
   }
   
   .filter-collapse-toggle:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
   
   html[data-theme='light'] .filter-collapse-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.03);
   }
   
   html[data-theme='dark'] .filter-collapse-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  .filter-collapse-toggle:active {
+    transform: scale(0.98);
   }
   
   .filter-collapse-content {
     max-height: 1000px;
     overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease, 
+                margin 0.3s ease,
+                padding 0.3s ease;
     opacity: 1;
+    padding-top: 0.5rem;
   }
   
   .filter-collapse-content.collapsed {
@@ -351,6 +325,7 @@ horizontal: false
     opacity: 0;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   
   .filter-chevron {
@@ -549,74 +524,169 @@ horizontal: false
   .search-tag .remove-tag {
     margin-left: 0.5rem;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     opacity: 0.7;
-    transition: all 0.2s ease;
-    padding: 0 0.25rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 0.3rem;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
   }
   
   .search-tag .remove-tag:hover {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
   }
   
   html[data-theme='dark'] .search-tag .remove-tag:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(239, 68, 68, 0.25);
+    color: #f87171;
   }
   
   .filter-btn {
-    border-radius: 5px;
-    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
     font-size: 0.875rem;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1.5px solid transparent;
     background-color: transparent;
-    transition: all 0.2s;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .filter-btn:hover::before {
+    left: 100%;
   }
   
   /* Light/dark mode specific button styling */
   html[data-theme='light'] .filter-btn {
     color: #475569;
-    border-color: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
   }
   
   html[data-theme='dark'] .filter-btn {
     color: #cbd5e1;
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
   }
   
   html[data-theme='light'] .filter-btn.selected {
-    background-color: rgba(2, 132, 199, 0.12);
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(2, 132, 199, 0.25) 100%);
     color: #0284c7;
-    border-color: rgba(2, 132, 199, 0.3);
-    box-shadow: none;
+    border-color: rgba(2, 132, 199, 0.4);
+    box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+    font-weight: 600;
   }
   
   html[data-theme='dark'] .filter-btn.selected {
-    background-color: rgba(56, 189, 248, 0.15);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0.3) 100%);
     color: #38bdf8;
-    border-color: rgba(56, 189, 248, 0.3);
-    box-shadow: none;
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 2px 4px rgba(56, 189, 248, 0.3);
+    font-weight: 600;
   }
   
   html[data-theme='light'] .filter-btn:hover:not(.selected) {
-    background-color: rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.06);
     border-color: rgba(0, 0, 0, 0.2);
-    transform: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   html[data-theme='dark'] .filter-btn:hover:not(.selected) {
-    background-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .filter-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Reset Filters Button */
+  .reset-filters-btn {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.15) 100%);
+    border: 1.5px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  html[data-theme='dark'] .reset-filters-btn {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.2) 100%);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #f87171;
+  }
+  
+  .reset-filters-btn:hover {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.25) 100%);
+    border-color: rgba(239, 68, 68, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+  }
+  
+  .reset-filters-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Active Filters Badge Styling */
+  #active-filters .badge,
+  #active-filters .filter-badge {
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  html[data-theme='light'] #active-filters .badge,
+  html[data-theme='light'] #active-filters .filter-badge {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(2, 132, 199, 0.25) 100%);
+    color: #0284c7;
+    border: 1.5px solid rgba(2, 132, 199, 0.3);
+  }
+  
+  html[data-theme='dark'] #active-filters .badge,
+  html[data-theme='dark'] #active-filters .filter-badge {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0.3) 100%);
+    color: #38bdf8;
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+  }
+  
+  #active-filters .badge:hover,
+  #active-filters .filter-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .filter-scroll {
@@ -1292,38 +1362,63 @@ horizontal: false
   
   .search-icon {
     position: absolute;
-    left: 12px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: #94a3b8;
-    font-size: 14px;
+    color: #64748b;
+    font-size: 15px;
     z-index: 2;
+    transition: color 0.3s ease;
+  }
+  
+  #search-input:focus + .search-icon,
+  #search-input:focus ~ .search-icon {
+    color: #0284c7;
+  }
+  
+  html[data-theme='dark'] #search-input:focus + .search-icon,
+  html[data-theme='dark'] #search-input:focus ~ .search-icon {
+    color: #38bdf8;
   }
   
   #search-input {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    padding: 0.5rem 0.5rem 0.5rem 2.25rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     width: 100%;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: transparent;
   }
   
+  html[data-theme='light'] #search-input {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1e293b;
+  }
+  
   html[data-theme='dark'] #search-input {
+    background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
     color: #f8fafc;
   }
   
   #search-input:focus {
-    border-color: rgba(2, 132, 199, 0.4);
-    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.1);
+    border-color: rgba(2, 132, 199, 0.5);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     outline: none;
+    transform: scale(1.01);
   }
   
   html[data-theme='dark'] #search-input:focus {
-    border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  #search-input::placeholder {
+    color: #94a3b8;
+    opacity: 0.7;
   }
   
   .search-buttons {
@@ -1332,60 +1427,85 @@ horizontal: false
   }
   
   .search-btn {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     background-color: transparent;
     color: #64748b;
-    border-radius: 6px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 0.25rem;
-    transition: all 0.2s ease;
+    margin-left: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
   }
   
+  html[data-theme='light'] .search-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  
   html[data-theme='dark'] .search-btn {
-    background-color: transparent;
+    background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
     color: #94a3b8;
   }
   
   .search-btn:hover {
-    background-color: rgba(0, 0, 0, 0.03);
-    color: #475569;
+    background-color: rgba(2, 132, 199, 0.1);
+    border-color: rgba(2, 132, 199, 0.3);
+    color: #0284c7;
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
   }
   
   html[data-theme='dark'] .search-btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #cbd5e1;
+    background-color: rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    box-shadow: 0 2px 4px rgba(56, 189, 248, 0.3);
+  }
+  
+  .search-btn:active {
+    transform: scale(0.95);
   }
   
   /* Search tags styling */
   .search-tag {
     display: inline-flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.04);
-    border-radius: 5px;
-    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    padding: 0.4rem 0.75rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
-    color: #475569;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    border: 1.5px solid transparent;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  html[data-theme='light'] .search-tag {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.12) 0%, rgba(2, 132, 199, 0.18) 100%);
+    color: #0284c7;
+    border-color: rgba(2, 132, 199, 0.3);
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
   }
   
   html[data-theme='dark'] .search-tag {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #cbd5e1;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.22) 100%);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 1px 3px rgba(56, 189, 248, 0.2);
   }
   
-  .search-tag .remove-tag {
-    margin-left: 0.5rem;
-    cursor: pointer;
-    font-size: 0.75rem;
+  .search-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+  }
+  
+  html[data-theme='dark'] .search-tag:hover {
+    box-shadow: 0 2px 6px rgba(56, 189, 248, 0.3);
   }
   
   /* Active filters styling */
