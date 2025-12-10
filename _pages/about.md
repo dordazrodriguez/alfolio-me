@@ -19,7 +19,7 @@ social: true # includes social icons at the bottom of the page
 
 ## About Me
 
-**Builder. Engineer. Problem-solver. Multiple business owner.**
+**Builder. Engineer. Problem-solver. Entreprenuer.**
 
 I create scalable systems, automation tools, and AI-driven applications across cloud, backend, and full-stack development. I enjoy taking ambitious ideas and turning them into real products that work.
 
