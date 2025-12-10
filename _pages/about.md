@@ -21,11 +21,13 @@ social: true # includes social icons at the bottom of the page
 
 I'm a **Software Engineer** and **Entrepreneur** with a dual background in **Computer Science** and **Finance**. This unique combination allows me to approach technical challenges with both analytical rigor and business acumen.
 
-What drives me is a deep **passion for building and creating**—from full-stack applications to machine learning models to products that serve real users. My **entrepreneurial spirit** has led me to co-found companies, work as a freelance engineer, and actively build and launch my own products.
+What drives me is a deep **passion for technology and business**—from full-stack applications to machine learning models to products and businesses that serve real users. My **entrepreneurial spirit** has led me to co-found companies, work as a freelance engineer, and actively build and launch my own products. I'm passionate about bridging the gap between innovative technology and real-world business value.
 
-Currently, I work as an **AI Data Analyst & Model Evaluation Specialist** at Handshake AI, where I conduct multimodal data analysis to enhance the accuracy and safety of large language models.
+Currently, I work as an **Junior Data Analyst** at Handshake AI, where I conduct multimodal data analysis to enhance the accuracy and safety of multimodal large language models.
 
-Beyond my work, I'm actively building and launching products including **MacroSnap AI** (a fitness and nutrition platform), an **automated cryptocurrency trading system** with ML and reinforcement learning, and a **cross-platform IPTV and movie streaming application**. These projects reflect my passion for bringing ideas to life and seeing them serve real users.
+Beyond my work, I'm actively building and launching multiple products and platforms. This includes **MacroSnap AI** (a fitness and nutrition platform), an **automated cryptocurrency trading system** with ML and reinforcement learning, and a **cross-platform IPTV and movie streaming application**. I'm also developing various SaaS platforms, marketplaces, and fintech solutions—from insurance comparison tools and logistics ecosystems to creator platforms and AI-powered applications. These projects reflect my passion for bringing ideas to life and seeing them serve real users.
+
+Through <a href="https://github.com/IdeaLab537" style="color: #0066cc; text-decoration: underline;">**IdeaLab**</a>, my internal innovation hub, I'm helping students and junior developers gain real-world project experience by contributing to actual products and platforms. It's a collaborative space where developers work on real features, submit pull requests, and participate in professional workflows—giving them portfolio-quality experience while helping bring MVPs and new software ideas to life.
 
 ## Professional Journey
 
