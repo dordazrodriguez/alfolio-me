@@ -25,7 +25,7 @@ I create scalable systems, automation tools, and AI-driven applications across c
 
 With a dual background in **Computer Science** and **Finance**, I bridge technical excellence with business value. Currently a **Junior Data Analyst** at Handshake AI, I'm simultaneously building and launching multiple products—from **MacroSnap AI** (fitness platform) to automated trading systems to various SaaS platforms and marketplaces.
 
-Beyond my own ventures and projects, <a href="https://github.com/IdeaLab537" style="color: #0066cc; text-decoration: underline;">**IdeaLab**</a> is a collaborative innovation hub and community where students and junior developers work together on real products and platforms. It's a place for people with similar interests to come together—building together, learning together, networking, and participating in fun events and meetups, growing as a community—all while gaining hands-on experience and creating something meaningful.
+Beyond my own businesses and projects, <a href="https://github.com/IdeaLab537" style="color: #0066cc; text-decoration: underline;">**IdeaLab**</a> is a collaborative innovation hub and community where students and junior developers work together on real products and platforms. It's a place for people with similar interests to come together—building together, learning together, networking, and participating in fun events and meetups, growing as a community—all while gaining hands-on experience and creating something meaningful.
 
 Looking ahead, I dream of working at a hedge fund or starting my own—combining quantitative analysis, algorithmic trading, and machine learning with my finance background to build sophisticated trading systems and investment strategies.
 
