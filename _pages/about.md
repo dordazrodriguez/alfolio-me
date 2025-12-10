@@ -19,21 +19,15 @@ social: true # includes social icons at the bottom of the page
 
 ## About Me
 
-I'm a **Software Engineer** and **Entrepreneur** with a dual background in **Computer Science** and **Finance**. This unique combination allows me to approach technical challenges with both analytical rigor and business acumen.
+**Builder. Engineer. Problem-solver. Multiple business owner.**
 
-What drives me is a deep **passion for technology and business**—from full-stack applications to machine learning models to products and businesses that serve real users. My **entrepreneurial spirit** has led me to co-found companies, work as a freelance engineer, and actively build and launch my own products. I'm passionate about bridging the gap between innovative technology and real-world business value.
+I create scalable systems, automation tools, and AI-driven applications across cloud, backend, and full-stack development. I enjoy taking ambitious ideas and turning them into real products that work.
 
-Currently, I work as an **Junior Data Analyst** at Handshake AI, where I conduct multimodal data analysis to enhance the accuracy and safety of multimodal large language models.
+With a dual background in **Computer Science** and **Finance**, I bridge technical excellence with business value. Currently a **Junior Data Analyst** at Handshake AI, I'm simultaneously building and launching multiple products—from **MacroSnap AI** (fitness platform) to automated trading systems to various SaaS platforms and marketplaces.
 
-Beyond my work, I'm actively building and launching multiple products and platforms. This includes **MacroSnap AI** (a fitness and nutrition platform), an **automated cryptocurrency trading system** with ML and reinforcement learning, and a **cross-platform IPTV and movie streaming application**. I'm also developing various SaaS platforms, marketplaces, and fintech solutions—from insurance comparison tools and logistics ecosystems to creator platforms and AI-powered applications. These projects reflect my passion for bringing ideas to life and seeing them serve real users.
+Beyond my own ventures and projects, <a href="https://github.com/IdeaLab537" style="color: #0066cc; text-decoration: underline;">**IdeaLab**</a> is a collaborative innovation hub and community where students and junior developers work together on real products and platforms. It's a place for people with similar interests to come together—building together, learning together, networking, and participating in fun events and meetups, growing as a community—all while gaining hands-on experience and creating something meaningful.
 
-Through <a href="https://github.com/IdeaLab537" style="color: #0066cc; text-decoration: underline;">**IdeaLab**</a>, my internal innovation hub, I'm helping students and junior developers gain real-world project experience by contributing to actual products and platforms. It's a collaborative space where developers work on real features, submit pull requests, and participate in professional workflows—giving them portfolio-quality experience while helping bring MVPs and new software ideas to life.
-
-## Professional Journey
-
-My career has been marked by a passion for solving complex problems through technology. As a **Freelance Full-Stack & DevOps Engineer**, I've managed the complete lifecycle of client projects—from requirements to deployment. I've independently handled DevOps, deploying applications on VPS using containerized environments and configuring infrastructure.
-
-Previously, I co-founded **Ordaz Logistics LLC**, where I led web development and database architecture. My experience also includes serving as an **Investment Fund Manager** at LSU Investment Fund, where I contributed to significant growth in Assets Under Management and utilized Bloomberg terminal for equity research.
+Looking ahead, I dream of working at a hedge fund or starting my own—combining quantitative analysis, algorithmic trading, and machine learning with my finance background to build sophisticated trading systems and investment strategies.
 
 ## Technical Expertise
 
