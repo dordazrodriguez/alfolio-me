@@ -51,50 +51,47 @@ importance: 1
 ## Screenshots
 
 ###### Docker Deployment :
-<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" alt="Dashboard Analytics" style="max-width: 80%;">
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" alt="Dashboard Analytics" style="max-width: 70%;">
 
-<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" alt="Dashboard Analytics" style="max-width: 80%;">
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" alt="Dashboard Analytics" style="max-width: 70%;">
 
 ##### Console
-<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" alt="Dashboard Analytics" style="max-width: 80%;">
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" alt="Dashboard Analytics" style="max-width: 70%;">
 
 ##### Main Dashboard
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="max-width: 80%;">
-
-##### Dashboard Analytics
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Analytics.png" alt="Dashboard Analytics" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="max-width: 70%;">
 
 ##### Placed Trades History
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Dashboard Trades" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Dashboard Trades" style="max-width: 70%;">
 
 ##### Alpaca Paper Trade Dashboard
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 70%;">
 
 ##### API Test Screenshots
 
 ###### API Test Screenshot 1
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" alt="API Test 1" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" alt="API Test 1" style="max-width: 70%;">
 
 ###### API Test Screenshot 2
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" alt="API Test 2" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" alt="API Test 2" style="max-width: 70%;">
 
 ###### API Test Screenshot 3
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" alt="API Test 3" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" alt="API Test 3" style="max-width: 70%;">
 
 ###### API Test Screenshot 4
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" alt="API Test 4" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" alt="API Test 4" style="max-width: 70%;">
 
 ###### API Test Screenshot 5
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" alt="API Test 5" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" alt="API Test 5" style="max-width: 70%;">
 
 ###### API Test Screenshot 6
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" alt="API Test 6" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" alt="API Test 6" style="max-width: 70%;">
 
 ##### Performance Indicators
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="max-width: 70%;">
 
 ##### ML Validation Metrics
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="max-width: 80%;">
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="max-width: 70%;">
 
 
 
