@@ -1036,7 +1036,7 @@ document.addEventListener('DOMContentLoaded', function() {
       postsList.style.display = 'none';
       // Force hide both paginations
       if (pagination) {
-        pagination.classList.add('d-none');
+      pagination.classList.add('d-none');
         pagination.style.display = 'none';
       }
       const clientPagination = document.getElementById('blog-client-pagination');
@@ -1051,7 +1051,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isFiltering) {
         // Force hide server-side pagination when filtering
         if (pagination) {
-          pagination.classList.add('d-none');
+        pagination.classList.add('d-none');
           pagination.style.display = 'none';
         }
         currentPage = 1; // Reset to first page when filtering
@@ -1060,7 +1060,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         // Show server-side pagination, hide client-side pagination
         if (pagination) {
-          pagination.classList.remove('d-none');
+        pagination.classList.remove('d-none');
           pagination.style.display = '';
         }
         const clientPagination = document.getElementById('blog-client-pagination');
@@ -1099,7 +1099,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide pagination if there's only one page or no posts
     if (totalPages <= 1 || filteredPosts.length === 0) {
       if (paginationContainer) {
-        paginationContainer.classList.add('d-none');
+      paginationContainer.classList.add('d-none');
         paginationContainer.style.display = 'none';
       }
       // Also force hide server-side pagination
