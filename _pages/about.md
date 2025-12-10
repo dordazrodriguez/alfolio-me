@@ -68,6 +68,8 @@ I believe in the power of **continuous learning** and **practical application**.
 
 My **entrepreneurial journey** has taught me resilience, resourcefulness, and the importance of wearing multiple hats. As a freelancer and co-founder, I've learned to be a developer, DevOps engineer, project manager, and business strategist—all while maintaining high standards for code quality and user experience.
 
+Looking ahead, I dream of working at a hedge fund or starting my own one day—combining my technical skills in quantitative analysis, algorithmic trading, and machine learning with my finance background to build sophisticated trading systems and investment strategies. This vision drives my continuous learning in both technology and finance.
+
 I'm bilingual (English and Spanish) and always excited to collaborate on innovative projects that push the boundaries of what's possible with technology.
 
 ## Let's Connect
