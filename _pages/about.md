@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /about/
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Software Engineer | Full-Stack Developer | Data Scientist | AI/ML Enthusiast
 nav: true
 nav_order: 2
 
@@ -10,17 +10,64 @@ profile:
   align: right
   image: me/IMG_2209.JPG
   image_circular: false # crops the image to make it circular
-   #more_info: >
-    #<p style="padding: 15px 25px;">Your City, State 12345</p>
+  
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+## About Me
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I'm a **Software Engineer** and **Entrepreneur** with a dual background in **Computer Science** and **Finance**. This unique combination allows me to approach technical challenges with both analytical rigor and business acumen.
 
-<div style="" />
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+What drives me is a deep **passion for building and creating**—from full-stack applications to machine learning models to products that serve real users. My **entrepreneurial spirit** has led me to co-found companies, work as a freelance engineer, and actively build and launch my own products.
+
+Currently, I work as an **AI Data Analyst & Model Evaluation Specialist** at Handshake AI, where I conduct multimodal data analysis to enhance the accuracy and safety of large language models.
+
+Beyond my work, I'm actively building and launching products including **MacroSnap AI** (a fitness and nutrition platform), an **automated cryptocurrency trading system** with ML and reinforcement learning, and a **cross-platform IPTV and movie streaming application**. These projects reflect my passion for bringing ideas to life and seeing them serve real users.
+
+## Professional Journey
+
+My career has been marked by a passion for solving complex problems through technology. As a **Freelance Full-Stack & DevOps Engineer**, I've managed the complete lifecycle of client projects—from requirements to deployment. I've independently handled DevOps, deploying applications on VPS using containerized environments and configuring infrastructure.
+
+Previously, I co-founded **Ordaz Logistics LLC**, where I led web development and database architecture. My experience also includes serving as an **Investment Fund Manager** at LSU Investment Fund, where I contributed to significant growth in Assets Under Management and utilized Bloomberg terminal for equity research.
+
+## Technical Expertise
+
+I specialize in **full-stack development** and **DevOps**, leveraging technologies like:
+- **Languages**: Python, Java, JavaScript, TypeScript, React, Node.js, Dart, Flutter
+- **Data & ML**: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, LangGraph
+- **Cloud & DevOps**: AWS, GCP, Firebase, Docker, Podman, Nginx, Linux, KVM, Qemu
+- **Databases**: PostgreSQL, MySQL, MongoDB, SQLite
+- **Tools**: Git, Tableau, Selenium, APIs, Bloomberg Terminal
+
+I'm particularly passionate about building systems that combine real-time data processing, machine learning, and intuitive user interfaces. Each project I build is an opportunity to solve a unique problem and push the boundaries of what's possible with technology.
+
+## Education & Continuous Learning
+
+I'm currently pursuing a **B.S. in Computer Science** at Western Governors University (Aug 2023 — Jan 2026), building upon my foundation in **Finance, Economics, and Statistics** from Louisiana State University. I hold several certifications including:
+
+- **Amazon AWS Certified Cloud Practitioner** - [View Credential](https://www.credly.com/badges/9ea47925-0510-4979-a0df-5ab3c82af9b5/linked_in_profile)
+- **ITIL 4 Foundation** - [Verify Certificate](https://www.peoplecert.org/for-corporations/certificate-verification-service) [GR671654683DO]
+- **LPI Linux Essentials** - [Verify Certificate](https://cs.lpi.org/caf/Xamman/certification/verify/LPI000611234/k5dm49xw2a) [k5dm49xw2a]
+- **IBM DevOps and Software Engineering**
+- **DataCamp Data Scientist Professional (Python)**
+- **Web3 Software Development**
+- **Bloomberg Terminal Certified**
+- **FINRA - Securities Industry Essentials (SIE)**
+- **CompTIA Security+** (In Progress)
+
+## Philosophy & Approach
+
+I believe in the power of **continuous learning** and **practical application**. I approach each project with curiosity and a commitment to excellence, thinking critically about both the technical implementation and the business value of every solution.
+
+**Building and creating** is at the core of who I am. There's something incredibly satisfying about taking an idea from concept to reality—from the first line of code to seeing something work in production. This passion extends beyond just writing code; it's about understanding systems holistically, from the database to the user experience, from the API endpoints to the deployment pipeline.
+
+My **entrepreneurial journey** has taught me resilience, resourcefulness, and the importance of wearing multiple hats. As a freelancer and co-founder, I've learned to be a developer, DevOps engineer, project manager, and business strategist—all while maintaining high standards for code quality and user experience.
+
+I'm bilingual (English and Spanish) and always excited to collaborate on innovative projects that push the boundaries of what's possible with technology.
+
+## Let's Connect
+
+I'm always open to discussing new opportunities, interesting projects, or just connecting with fellow developers and data scientists. Feel free to reach out through the links below!
