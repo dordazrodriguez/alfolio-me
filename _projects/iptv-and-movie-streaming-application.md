@@ -13,6 +13,7 @@ tags:
   - NoSQL
   - Mobile Development
   - Desktop
+  - Full Stack
 link: "https://github.com/dordazrodriguez/IPTV-and-Movie-App"
 importance: 1
 ---

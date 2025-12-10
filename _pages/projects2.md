@@ -131,6 +131,7 @@ horizontal: false
       <!-- Projects Grid -->
       <div class="projects">
         {% assign sorted_projects = site.projects | sort: "importance" %}
+        {% comment %} Projects will be sorted by date in JavaScript (most recent first), then by importance {% endcomment %}
         <div class="row" id="projects-grid">
           {% for project in sorted_projects %}
             <div class="col-md-6 col-lg-4 mb-4 project-card" 
@@ -140,8 +141,13 @@ horizontal: false
                  data-tags="{{ project.tags | join: ',' }}"
                  data-image="{% if project.img %}{{ project.img | relative_url }}{% endif %}{% if project.additional_images %}{% for img in project.additional_images %},{{ img | relative_url }}{% endfor %}{% endif %}"
                  data-video="{% if project.video %}{{ project.video | relative_url }}{% endif %}"
+                 data-link="{{ project.link }}"
                  data-github="{{ project.github }}"
                  data-live="{{ project.live }}"
+                 data-date="{% if project.date %}{{ project.date | date: '%Y-%m-%d' }}{% else %}1900-01-01{% endif %}"
+                 data-show-date="{% if project.show_date == true %}true{% else %}false{% endif %}"
+                 data-importance="{% if project.importance %}{{ project.importance }}{% else %}9999{% endif %}"
+                 data-has-importance="{% if project.importance %}true{% else %}false{% endif %}"
                  data-details="{{ project.url | relative_url }}">
               <div class="card" onclick="openProjectModal(this.parentNode)">
                 {% if project.img %}
@@ -162,6 +168,11 @@ horizontal: false
                 {% endif %}
                 <div class="card-body">
                   <h5 class="card-title">{{ project.title }}</h5>
+                  {% if project.show_date and project.date and project.date != '1900-01-01' %}
+                    <small class="text-muted d-block mb-2">
+                      <i class="far fa-calendar mr-1"></i>{{ project.date | date: "%B %Y" }}
+                    </small>
+                  {% endif %}
                   <p class="card-text">{{ project.description }}</p>
                   <div class="d-flex flex-wrap badge-container" style="gap: 0.2rem; margin-bottom: 0.25rem;">
                     {% for tag in project.tags %}
@@ -1887,20 +1898,26 @@ horizontal: false
       <!-- Content Section -->
       <div class="modal-body">
         <h2 id="modal-title" class="font-weight-bold"></h2>
+        <small id="modal-date" class="text-muted d-block mb-2" style="display: none;">
+          <i class="far fa-calendar mr-1"></i><span id="modal-date-text"></span>
+        </small>
         <p id="modal-description"></p>
         
         <!-- Technologies -->
         <div id="modal-technologies" class="mb-4"></div>
         
         <!-- Links -->
-        <div class="d-flex pt-4 border-top">
-          <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mr-3">
-            <i class="fas fa-link mr-2"></i> Link
+        <div class="d-flex pt-4 border-top flex-wrap">
+          <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mr-3 mb-2">
+            <i class="fab fa-github mr-2"></i> GitHub
           </a>
-          <a id="modal-live" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mr-3">
-            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+          <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mr-3 mb-2">
+            <i class="fas fa-external-link-alt mr-2"></i> Link
           </a>
-          <a id="modal-details" href="#" class="btn btn-outline-primary ml-auto">
+          <a id="modal-live" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary mr-3 mb-2">
+            <i class="fas fa-globe mr-2"></i> Live Demo
+          </a>
+          <a id="modal-details" href="#" class="btn btn-outline-primary ml-auto mb-2">
             <i class="fas fa-info-circle mr-2"></i> View Details
           </a>
         </div>
@@ -1910,8 +1927,142 @@ horizontal: false
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get all projects
+  // Function to sort and reorder projects
+  function sortProjects() {
+    const projectsGrid = document.getElementById('projects-grid');
+    if (!projectsGrid) {
+      return [];
+    }
+    
+    // Get all projects (create a new array to avoid mutation issues)
+    const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    
+    if (projectCards.length === 0) {
+      return [];
+    }
+    
+    // Create a copy and sort it (don't mutate original)
+    const sortedCards = [...projectCards].sort((a, b) => {
+      const dateA = a.getAttribute('data-date') || '1900-01-01';
+      const dateB = b.getAttribute('data-date') || '1900-01-01';
+      const showDateA = a.getAttribute('data-show-date') === 'true';
+      const showDateB = b.getAttribute('data-show-date') === 'true';
+      const hasImportanceA = a.getAttribute('data-has-importance') === 'true';
+      const hasImportanceB = b.getAttribute('data-has-importance') === 'true';
+      const importanceA = parseInt(a.getAttribute('data-importance') || '9999');
+      const importanceB = parseInt(b.getAttribute('data-importance') || '9999');
+      
+      // Check if project has a valid date (not default, not null, not empty)
+      const hasDateA = dateA && dateA !== '1900-01-01' && dateA !== 'null' && dateA !== 'undefined' && dateA.trim() !== '';
+      const hasDateB = dateB && dateB !== '1900-01-01' && dateB !== 'null' && dateB !== 'undefined' && dateB.trim() !== '';
+      
+      // Check if project should show date (has date AND show_date is true)
+      const shouldShowDateA = hasDateA && showDateA;
+      const shouldShowDateB = hasDateB && showDateB;
+      
+      // Priority 1: Projects with date AND show_date:true come before all others
+      if (shouldShowDateA && !shouldShowDateB) {
+        return -1; // a comes first
+      }
+      if (!shouldShowDateA && shouldShowDateB) {
+        return 1; // b comes first
+      }
+      
+      // Priority 2: If both have date AND show_date:true, sort by date (descending - most recent first)
+      if (shouldShowDateA && shouldShowDateB) {
+        if (dateA !== dateB) {
+          return dateB.localeCompare(dateA); // Most recent first
+        }
+        // Same date: sort by importance (ascending - lower number = higher importance)
+        // But projects with importance come before those without
+        if (hasImportanceA && !hasImportanceB) return -1;
+        if (!hasImportanceA && hasImportanceB) return 1;
+        return importanceA - importanceB;
+      }
+      
+      // Priority 3: Neither has date+show_date:true
+      // Projects with importance come before projects without importance
+      if (hasImportanceA && !hasImportanceB) {
+        return -1; // a comes first (has importance)
+      }
+      if (!hasImportanceA && hasImportanceB) {
+        return 1; // b comes first (has importance)
+      }
+      
+      // Both have or both don't have importance: sort by importance value
+      return importanceA - importanceB;
+    });
+    
+    // Re-order cards in DOM by moving them to correct positions
+    // This preserves event listeners and other DOM properties
+    sortedCards.forEach((card, index) => {
+      const currentIndex = Array.from(projectsGrid.children).indexOf(card);
+      if (currentIndex !== index) {
+        // Card is not in the right position, move it
+        if (index === 0) {
+          // Move to beginning
+          projectsGrid.insertBefore(card, projectsGrid.firstChild);
+        } else if (index >= projectsGrid.children.length) {
+          // Move to end
+          projectsGrid.appendChild(card);
+        } else {
+          // Move to specific position
+          const referenceNode = projectsGrid.children[index];
+          if (referenceNode !== card) {
+            projectsGrid.insertBefore(card, referenceNode);
+          }
+        }
+      }
+    });
+    
+    // Verify: Log first 3 to confirm sort worked
+    const firstThree = sortedCards.slice(0, 3).map(c => ({
+      title: c.getAttribute('data-title'),
+      date: c.getAttribute('data-date'),
+      showDate: c.getAttribute('data-show-date'),
+      hasDateAndShow: c.getAttribute('data-date') && c.getAttribute('data-date') !== '1900-01-01' && c.getAttribute('data-show-date') === 'true'
+    }));
+    console.log('Projects sorted. First 3:', firstThree);
+    
+    // Double-check: Verify DOM order matches sorted order
+    const domOrder = Array.from(projectsGrid.children).slice(0, 3).map(c => c.getAttribute('data-title'));
+    const sortedOrder = sortedCards.slice(0, 3).map(c => c.getAttribute('data-title'));
+    if (JSON.stringify(domOrder) !== JSON.stringify(sortedOrder)) {
+      console.warn('DOM order does not match sorted order! Re-appending...');
+      // Fallback: Clear and re-append if order doesn't match
+      while (projectsGrid.firstChild) {
+        projectsGrid.removeChild(projectsGrid.firstChild);
+      }
+      sortedCards.forEach(card => {
+        projectsGrid.appendChild(card);
+      });
+    }
+    
+    return sortedCards;
+  }
+  
+  // Run sort immediately when DOM is ready
+  function initializeProjects() {
+    // Sort projects first, before any other operations
+    let projectCardsArray = sortProjects();
+    
+    if (!projectCardsArray || projectCardsArray.length === 0) {
+      // If sort didn't work, try again after a short delay
+      setTimeout(() => {
+        projectCardsArray = sortProjects();
+        if (projectCardsArray && projectCardsArray.length > 0) {
+          continueInitialization(projectCardsArray);
+        }
+      }, 100);
+      return;
+    }
+    
+    continueInitialization(projectCardsArray);
+  }
+  
+  function continueInitialization(projectCardsArray) {
+    
+    // Get all projects (after sorting)
     const projectCards = document.querySelectorAll('.project-card');
     const projectsGrid = document.getElementById('projects-grid');
     const noProjectsMessage = document.getElementById('no-projects-message');
@@ -1941,9 +2092,9 @@ horizontal: false
     let searchTags = [];
     let searchQuery = '';
     
-    // Extract all unique tags from projects
+    // Extract all unique tags from projects (use sorted array)
     const allTags = new Set();
-    projectCards.forEach(card => {
+    projectCardsArray.forEach(card => {
       const tags = card.getAttribute('data-tags').split(',').filter(tag => tag.trim() !== '');
       tags.forEach(tag => allTags.add(tag.trim()));
     });
@@ -2425,8 +2576,8 @@ horizontal: false
         searchTerms = [searchValue];
       }
       
-      // Apply search filtering
-      projectCards.forEach(card => {
+      // Apply search filtering (use sorted array to maintain order)
+      projectCardsArray.forEach(card => {
         const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
         const cardDesc = card.querySelector('.card-text').textContent.toLowerCase();
         const cardTags = Array.from(card.querySelectorAll('.project-tag')).map(tag => tag.textContent.toLowerCase());
@@ -2449,11 +2600,12 @@ horizontal: false
       updateVisibleProjects();
     }
     
-    // Function to update visible projects
+    // Function to update visible projects (preserves sorted order)
     function updateVisibleProjects() {
       let visibleCount = 0;
       
-      projectCards.forEach(card => {
+      // Use projectCardsArray which maintains the sorted order
+      projectCardsArray.forEach(card => {
         const categoryAttr = card.getAttribute('data-category') || '';
         const title = card.getAttribute('data-title').toLowerCase();
         const description = card.getAttribute('data-description').toLowerCase();
@@ -2643,14 +2795,22 @@ horizontal: false
     updateSearchTags();
     updateActiveFilters();
     
-    // Add animation to cards on load
-    projectCards.forEach((card, index) => {
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, index * 50);
-    });
-  });
+      // Add animation to cards on load
+      projectCardsArray.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
+    }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeProjects);
+  } else {
+    // DOM is already ready
+    initializeProjects();
+  }
 </script>
 
 <script>
@@ -2662,9 +2822,12 @@ horizontal: false
     const modalImagePlaceholder = document.getElementById('modal-image-placeholder');
     const modalCategory = document.getElementById('modal-category');
     const modalTitle = document.getElementById('modal-title');
+    const modalDate = document.getElementById('modal-date');
+    const modalDateText = document.getElementById('modal-date-text');
     const modalDescription = document.getElementById('modal-description');
     const modalTechnologies = document.getElementById('modal-technologies');
     const modalGithub = document.getElementById('modal-github');
+    const modalLink = document.getElementById('modal-link');
     const modalLive = document.getElementById('modal-live');
     const modalDetails = document.getElementById('modal-details');
     const singleImageContainer = document.getElementById('single-image-container');
@@ -2699,6 +2862,19 @@ horizontal: false
     // Display categories as 'category, category' format
     modalCategory.textContent = categories.length > 0 ? categories.join(', ') : '';
     modalTitle.textContent = card.getAttribute('data-title') || '';
+    
+    // Set date if available and show_date is true
+    const projectDate = card.getAttribute('data-date');
+    const showDate = card.getAttribute('data-show-date') === 'true';
+    if (showDate && projectDate && projectDate !== '1900-01-01') {
+      const dateObj = new Date(projectDate);
+      const formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+      modalDateText.textContent = formattedDate;
+      modalDate.style.display = 'block';
+    } else {
+      modalDate.style.display = 'none';
+    }
+    
     modalDescription.textContent = card.getAttribute('data-description') || '';
     
     // Set technologies
@@ -2712,16 +2888,74 @@ horizontal: false
       modalTechnologies.appendChild(techElement);
     });
     
-    // Set links
+    // Set links - show both link and github if both are present
+    const linkUrl = card.getAttribute('data-link');
     const githubUrl = card.getAttribute('data-github');
     const liveUrl = card.getAttribute('data-live');
     const detailsUrl = card.getAttribute('data-details');
     
-    if (githubUrl && githubUrl !== "null" && githubUrl !== "undefined" && githubUrl !== "") {
+    // Helper function to check if URL is valid
+    const isValidUrl = (url) => {
+      return url && url !== "null" && url !== "undefined" && url !== "";
+    };
+    
+    // Helper to check if URL is a repository URL (not GitHub Pages)
+    const isRepoUrl = (url) => {
+      if (!url) return false;
+      // Repo URLs: https://github.com/username/repo or https://gitlab.com/username/repo
+      // NOT GitHub Pages: https://username.github.io/portfolio
+      return (url.includes('/github.com/') || url.includes('/gitlab.com/')) && !url.includes('github.io');
+    };
+    
+    // 1. Handle github field - always show in modal-github if present
+    if (isValidUrl(githubUrl)) {
       modalGithub.href = githubUrl;
       modalGithub.style.display = 'flex';
+      if (githubUrl.includes('github.com')) {
+        modalGithub.innerHTML = '<i class="fab fa-github mr-2"></i> GitHub';
+      } else if (githubUrl.includes('gitlab.com')) {
+        modalGithub.innerHTML = '<i class="fab fa-gitlab mr-2"></i> GitLab';
+      } else {
+        modalGithub.innerHTML = '<i class="fab fa-github mr-2"></i> Code';
+      }
+    } else if (isValidUrl(linkUrl) && isRepoUrl(linkUrl)) {
+      // No github field, but link is a repo URL - show in modal-github
+      modalGithub.href = linkUrl;
+      modalGithub.style.display = 'flex';
+      if (linkUrl.includes('github.com')) {
+        modalGithub.innerHTML = '<i class="fab fa-github mr-2"></i> GitHub';
+      } else {
+        modalGithub.innerHTML = '<i class="fab fa-gitlab mr-2"></i> GitLab';
+      }
     } else {
       modalGithub.style.display = 'none';
+    }
+    
+    // 2. Handle link field - show in modal-link if it's NOT a repo URL and different from github
+    if (isValidUrl(linkUrl)) {
+      const linkIsRepo = isRepoUrl(linkUrl);
+      const isDifferentFromGithub = linkUrl !== githubUrl;
+      
+      // Show link button if: it's not a repo URL AND it's different from github
+      if (!linkIsRepo && isDifferentFromGithub) {
+        modalLink.href = linkUrl;
+        modalLink.style.display = 'flex';
+        modalLink.innerHTML = '<i class="fas fa-external-link-alt mr-2"></i> Link';
+      } else {
+        // Link is a repo URL or same as github, don't show link button
+        modalLink.style.display = 'none';
+      }
+    } else {
+      modalLink.style.display = 'none';
+    }
+    
+    // 3. Handle live field - show in modal-live
+    if (isValidUrl(liveUrl)) {
+      modalLive.href = liveUrl;
+      modalLive.style.display = 'flex';
+      modalLive.innerHTML = '<i class="fas fa-globe mr-2"></i> Live Demo';
+    } else {
+      modalLive.style.display = 'none';
     }
     
     if (liveUrl && liveUrl !== "null" && liveUrl !== "undefined" && liveUrl !== "") {
@@ -2844,9 +3078,8 @@ horizontal: false
       $('#project-modal').modal('hide');
     });
     
-    // Add click events to all project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
+    // Add click events to all project cards (use sorted array to maintain order)
+    projectCardsArray.forEach(card => {
       card.addEventListener('click', function() {
         openProjectModal(this);
       });

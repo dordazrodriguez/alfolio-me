@@ -6,7 +6,6 @@ img: assets/img/1.jpg
 additional_images:
   - /assets/img/second-image.jpg
   - /assets/img/third-image.jpg
-importance: 1
 category: Finance
 gitUrl: "https://Repo.com/yourusername/financial-market-analyzer"
 liveUrl: "https://market-analyzer.example.com"

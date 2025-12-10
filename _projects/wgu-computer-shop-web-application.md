@@ -9,8 +9,9 @@ tags:
   - Spring Boot
   - Web Development
   - Full Stack
+  - Frontend
 link: "https://gitlab.com/wgu-gitlab-environment/student-repos/dordazr1/d287-java-frameworks/-/tree/main1?ref_type=heads"
-importance: 1
+importance: 2
 ---
 
 # WGU Computer Shop Web Application

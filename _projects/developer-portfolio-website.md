@@ -11,7 +11,10 @@ tags:
   - HTML
   - CSS
   - Portfolio
-link: "https://github.com/dordazrodriguez/portfolio"
+  - Full Stack
+  - Frontend
+link: "https://dordazrodriguez.github.io/portfolio"
+github: "https://github.com/dordazrodriguez/portfolio"
 # redirect: "https://dordazrodriguez.github.io/portfolio"
 importance: 1
 ---

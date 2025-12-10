@@ -17,6 +17,8 @@ tags:
   - Full Stack
   - Data Science
 link: "https://github.com/dordazrodriguez/CryptoTradingSystem"
+date: 2025-01-15
+show_date: true
 importance: 1
 ---
 
@@ -44,23 +46,32 @@ importance: 1
 
 ## Screenshots
 
-### Main Dashboard
+###### Docker Deployment :
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" alt="Dashboard Analytics" style="max-width: 80%;">
+
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" alt="Dashboard Analytics" style="max-width: 80%;">
+
+##### Console
+<img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" alt="Dashboard Analytics" style="max-width: 80%;">
+
+##### Main Dashboard
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="max-width: 80%;">
 
-### Dashboard Analytics
+##### Dashboard Analytics
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Analytics.png" alt="Dashboard Analytics" style="max-width: 80%;">
 
-### Dashboard Trades
+##### Placed Trades History
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Dashboard Trades" style="max-width: 80%;">
 
-### Performance Indicators
+##### Alpaca Paper Trade Dashboard
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 80%;">
+
+##### Performance Indicators
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="max-width: 80%;">
 
-### ML Validation Metrics
+##### ML Validation Metrics
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="max-width: 80%;">
 
-### Alpaca Paper Trade Dashboard
-<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 80%;">
 
 ## Links
 

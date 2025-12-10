@@ -19,9 +19,20 @@ layout: default
       
       <div class="project-links">
         {% if page.link %}
-        <a href="{{ page.link }}" target="_blank" class="btn btn-sm btn-github">
-          <i class="fab fa-github"></i> Link
-        </a>
+          {% assign link_url = page.link %}
+          {% if link_url contains 'github.com' %}
+            <a href="{{ page.link }}" target="_blank" class="btn btn-sm btn-github">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          {% elsif link_url contains 'gitlab.com' %}
+            <a href="{{ page.link }}" target="_blank" class="btn btn-sm btn-github">
+              <i class="fab fa-gitlab"></i> GitLab
+            </a>
+          {% else %}
+            <a href="{{ page.link }}" target="_blank" class="btn btn-sm btn-github">
+              <i class="fas fa-external-link-alt"></i> Link
+            </a>
+          {% endif %}
         {% elsif page.gitUrl %}
         <a href="{{ page.gitUrl }}" target="_blank" class="btn btn-sm btn-github">
           <i class="fab fa-github"></i> GitHub

@@ -10,7 +10,7 @@ tags:
   - tensorflow
 link: "https://github.com/yourusername/stock-prediction"
 # redirect: "https://yourdemo.com/stock-prediction"
-importance: 1
+
 ---
 
 # AI-Powered Stock Prediction System
