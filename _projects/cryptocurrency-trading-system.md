@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Cryptocurrency Trading System"
+title: "Automated Self-Improving Cryptocurrency Trading System"
 description: "Full-stack automated trading system with real-time market data processing, 26 technical indicators, and 170+ engineered ML features. Features Flask REST API, React dashboard, Random Forest/LightGBM models, PPO reinforcement learning agent, and ATR-based risk management."
 category: 
   - 'Financial'
@@ -18,6 +18,8 @@ tags:
   - Full Stack
   - Data Science
   - VPS
+  - ML
+  - AI
 link: "https://github.com/dordazrodriguez/CryptoTradingSystem"
 date: 2025-01-15
 show_date: true
@@ -68,11 +70,32 @@ importance: 1
 ##### Alpaca Paper Trade Dashboard
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="max-width: 80%;">
 
+##### API Test Screenshots
+
+###### API Test Screenshot 1
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" alt="API Test 1" style="max-width: 80%;">
+
+###### API Test Screenshot 2
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" alt="API Test 2" style="max-width: 80%;">
+
+###### API Test Screenshot 3
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" alt="API Test 3" style="max-width: 80%;">
+
+###### API Test Screenshot 4
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" alt="API Test 4" style="max-width: 80%;">
+
+###### API Test Screenshot 5
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" alt="API Test 5" style="max-width: 80%;">
+
+###### API Test Screenshot 6
+<img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" alt="API Test 6" style="max-width: 80%;">
+
 ##### Performance Indicators
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="max-width: 80%;">
 
 ##### ML Validation Metrics
 <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="max-width: 80%;">
+
 
 
 ## Links
