@@ -6,6 +6,7 @@ category:
   - 'Financial'
   - 'Quant'
   - 'AI'
+  - 'DevOps'
 img: https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png
 tags:
   - Python
@@ -16,6 +17,7 @@ tags:
   - Docker
   - Full Stack
   - Data Science
+  - VPS
 link: "https://github.com/dordazrodriguez/CryptoTradingSystem"
 date: 2025-01-15
 show_date: true

@@ -5,7 +5,8 @@ description: "Launched MacroSnap AI for web and iOS/Android. Engineered core fea
 category: 
   - 'Web'
   - 'AI'
-  - 'Dev'
+  - 'DevOps'
+  - 'Cloud'
 img: assets/img/projects/macrosnap/macrosnap_dashboard.png
 tags:
   - Mobile Development
@@ -16,12 +17,16 @@ tags:
   - AI
   - Full Stack
   - Machine Learning
+  - GCP
+  - AWS
 live: "https://macrosnap.tectgc.com"
 link: "https://macrosnap.tectgc.com"
 date: 2025-01-10
 show_date: true
 importance: 1
 ---
+
+<img src="{{ 'assets/img/projects/macrosnap/macrosnap_dashboard.png' | relative_url }}" alt="MacroSnap Dashboard" style="max-width: 80%;">
 
 ## Key Features
 
