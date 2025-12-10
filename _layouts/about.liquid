@@ -65,26 +65,27 @@
         margin-bottom: 0.5rem;
     }
     
-    /* Mobile layout: stack image below name */
+    /* Center image on all screen sizes */
+    .post-header .profile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .post-header .profile-protected {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    /* Mobile layout adjustments */
     @media (max-width: 768px) {
-        .post-header > div {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-        }
-        
-        .post-header .profile {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin-left: 0 !important;
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-        }
-        
         .post-header .profile-protected {
             width: 100% !important;
             max-width: 100% !important;
             min-width: auto !important;
+            margin: 0 auto !important;
         }
         
         .post-header .profile img,
@@ -92,6 +93,7 @@
         .post-header .profile figure {
             width: 100% !important;
             max-width: 300px !important;
+            margin: 0 auto !important;
         }
     }
 
@@ -127,8 +129,8 @@
     <!-- Content -->
     <div class="post container">
         <header class="post-header">
-            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding-bottom: 2rem;">
-                <div style="flex: 1;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-bottom: 2rem;">
+                <div style="width: 100%; text-align: center;">
                     <h1 class="post-title" style="padding-bottom: 0;">
                     {% if site.title == 'blank' %}
                         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
@@ -140,7 +142,7 @@
                     <p class="desc">{{ page.subtitle }}</p>
                 </div>
                 {% if page.profile and page.profile.image %}
-                <div class="profile profile-protected" style="flex: 1; min-width: 320px; max-width: 450px; width: 400px; position: relative; margin-left: -1rem;"> 
+                <div class="profile profile-protected" style="width: 100%; max-width: 450px; position: relative; margin: 1rem auto;"> 
                     <div class="image-protection-overlay"></div>
                     {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
                     {% if page.profile.image_circular %}
@@ -155,27 +157,27 @@
                         -webkit-user-select: none;
                         -moz-user-select: none;
                         -ms-user-select: none;
-                        min-height: 400px;
+                        min-height: auto;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         background-color: transparent;
                         overflow: hidden;
                         padding: 0;
-                        margin: 0;
+                        margin: 0 auto;
                       }
                       
                       .profile img,
                       .profile picture,
                       .profile figure {
                         width: 400px !important;
-                        max-width: 400px !important;
+                        max-width: 100% !important;
                         height: auto !important;
                         display: block;
                         opacity: 0;
                         transition: opacity 0.3s ease-in;
                         object-fit: cover;
-                        margin: 0;
+                        margin: 0 auto;
                         padding: 0;
                       }
                       
@@ -187,11 +189,11 @@
                       
                       @media (max-width: 768px) {
                         .profile-protected {
-                          min-height: 280px;
+                          min-height: auto;
                         }
                         .profile {
-                          min-width: 200px !important;
-                          max-width: 280px !important;
+                          min-width: auto !important;
+                          max-width: 100% !important;
                           width: 100% !important;
                         }
                         .profile img,
