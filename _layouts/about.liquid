@@ -50,19 +50,29 @@
     
     .post.container article {
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post.container article .clearfix > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    .post.container article .clearfix h2:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
     }
     
     .post.container .post-header {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
     
     .post.container .post-title {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
     }
     
     .post.container .desc {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
     }
     
     /* Mobile layout: stack image below name */
@@ -127,7 +137,7 @@
     <!-- Content -->
     <div class="post container">
         <header class="post-header">
-            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding-bottom: 1.5rem; padding-top: 2rem;">
                 <div style="flex: 1;">
                     <h1 class="post-title" style="padding-bottom: 0;">
                     {% if site.title == 'blank' %}
@@ -155,7 +165,7 @@
                         -webkit-user-select: none;
                         -moz-user-select: none;
                         -ms-user-select: none;
-                        min-height: 400px;
+                        min-height: auto;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -187,7 +197,7 @@
                       
                       @media (max-width: 768px) {
                         .profile-protected {
-                          min-height: 280px;
+                          min-height: auto;
                         }
                         .profile {
                           min-width: 200px !important;
