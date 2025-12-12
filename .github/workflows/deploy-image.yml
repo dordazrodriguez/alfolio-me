@@ -1,17 +1,20 @@
 name: Docker Image CI
 
+# Disabled - uncomment below to enable
+# on:
+#   push:
+#     branches:
+#       - master
+#       - main
+#     paths:
+#       - "bin/entry_point.sh"
+#       - "Dockerfile"
+#       - "Gemfile"
+#       - "Gemfile.lock"
+#       - "package.json"
+#       - "package-lock.json"
 on:
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - "bin/entry_point.sh"
-      - "Dockerfile"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "package.json"
-      - "package-lock.json"
+  workflow_dispatch:
 
 jobs:
   build:
