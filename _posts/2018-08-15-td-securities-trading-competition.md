@@ -2,7 +2,7 @@
 layout: post
 title: Competing on Wall Street - TD Securities Trading Competition Invitation
 date: 2018-08-15 10:00:00
-description: Selected as one of 32 students worldwide to compete in TD Securities' prestigious trading competition in New York. Achieved 7th place, demonstrating aptitude in high-pressure trading environments and real-time decision-making.
+description: Selected as one of 32 students worldwide to compete in TD Securities' prestigious trading competition in New York.
 tags: finance trading competition wall-street td-securities high-frequency
 categories: experience
 ---
