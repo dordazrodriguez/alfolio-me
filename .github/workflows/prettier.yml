@@ -5,10 +5,12 @@ on:
     branches:
       - master
       - main
-  push:
-    branches:
-      - master
-      - main
+  # Automatic builds on push disabled - uncomment below to enable
+  # push:
+  #   branches:
+  #     - master
+  #     - main
+  workflow_dispatch:
 
 jobs:
   check:
