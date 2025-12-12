@@ -2457,13 +2457,16 @@ horizontal: false
             <i class="fas fa-times"></i>
           </span>
         `;
-        filterElement.querySelector('.remove-filter').addEventListener('click', () => {
-          selectedCategories = ['All'];
-          updateCategoryButtons();
-          applySearch();
-          updateActiveFilters();
+        activeFiltersContainers.forEach(container => {
+          const clonedElement = filterElement.cloneNode(true);
+          clonedElement.querySelector('.remove-filter').addEventListener('click', () => {
+            selectedCategories = ['All'];
+            updateCategoryButtons();
+            applySearch();
+            updateActiveFilters();
+          });
+          container.appendChild(clonedElement);
         });
-        activeFiltersContainers.forEach(container => container.appendChild(filterElement.cloneNode(true)));
       }
       
       // Add tech filters
@@ -2477,13 +2480,16 @@ horizontal: false
             <i class="fas fa-times"></i>
           </span>
         `;
-        filterElement.querySelector('.remove-filter').addEventListener('click', () => {
-          selectedTechs = ['All'];
-          updateTechButtons();
-          applySearch();
-          updateActiveFilters();
+        activeFiltersContainers.forEach(container => {
+          const clonedElement = filterElement.cloneNode(true);
+          clonedElement.querySelector('.remove-filter').addEventListener('click', () => {
+            selectedTechs = ['All'];
+            updateTechButtons();
+            applySearch();
+            updateActiveFilters();
+          });
+          container.appendChild(clonedElement);
         });
-        activeFiltersContainers.forEach(container => container.appendChild(filterElement.cloneNode(true)));
       }
       
       // Add search query filter
@@ -2497,14 +2503,17 @@ horizontal: false
             <i class="fas fa-times"></i>
           </span>
         `;
-        filterElement.querySelector('.remove-filter').addEventListener('click', () => {
-          if (searchInput) searchInput.value = '';
-          if (searchInputHorizontal) searchInputHorizontal.value = '';
-          searchQuery = '';
-          applySearch();
-          updateActiveFilters();
+        activeFiltersContainers.forEach(container => {
+          const clonedElement = filterElement.cloneNode(true);
+          clonedElement.querySelector('.remove-filter').addEventListener('click', () => {
+            if (searchInput) searchInput.value = '';
+            if (searchInputHorizontal) searchInputHorizontal.value = '';
+            searchQuery = '';
+            applySearch();
+            updateActiveFilters();
+          });
+          container.appendChild(clonedElement);
         });
-        activeFiltersContainers.forEach(container => container.appendChild(filterElement.cloneNode(true)));
       }
       
       // Add search tags filters
@@ -2518,13 +2527,16 @@ horizontal: false
             <i class="fas fa-times"></i>
           </span>
         `;
-        filterElement.querySelector('.remove-filter').addEventListener('click', () => {
-          searchTags = [];
-          updateSearchTags();
-          applySearch();
-          updateActiveFilters();
+        activeFiltersContainers.forEach(container => {
+          const clonedElement = filterElement.cloneNode(true);
+          clonedElement.querySelector('.remove-filter').addEventListener('click', () => {
+            searchTags = [];
+            updateSearchTags();
+            applySearch();
+            updateActiveFilters();
+          });
+          container.appendChild(clonedElement);
         });
-        activeFiltersContainers.forEach(container => container.appendChild(filterElement.cloneNode(true)));
       }
       
       // Show/hide active filters sections
