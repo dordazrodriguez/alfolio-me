@@ -113,7 +113,7 @@ My experience as Investment Fund Manager at LSU Investment Fund provided a rare 
 
 The skills developed during this role—from Bloomberg Terminal proficiency to quantitative analysis and risk management—form the foundation for a career in active portfolio management. The work ethic demonstrated through after-hours research sessions, combined with a systematic approach to alpha generation, positions me to contribute meaningfully to a hedge fund's investment process.
 
-For hedge fund employers, this experience demonstrates:
+This experience demonstrates:
 - **Proven ability to generate alpha** through systematic research and disciplined execution
 - **Professional tool proficiency** with industry-standard platforms like Bloomberg Terminal
 - **Real-world portfolio management experience** with measurable, benchmarked results

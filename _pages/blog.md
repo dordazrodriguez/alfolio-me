@@ -119,30 +119,36 @@ pagination:
             <!-- Categories and Tags Row -->
             <div class="row">
               <div class="col-md-6 mb-3">
-                <h6 class="filter-heading-horizontal">
+                <h6 class="filter-heading-horizontal filter-collapse-toggle" style="cursor: pointer; user-select: none; margin-bottom: 0.5rem;">
                   <i class="fas fa-folder"></i>
                   <span>Categories</span>
+                  <i class="fas fa-chevron-down filter-chevron" style="margin-left: auto; transition: transform 0.3s ease; font-size: 0.75rem; opacity: 0.7;"></i>
                 </h6>
-                <div class="d-flex flex-wrap" id="blog-category-filters">
-                  <button class="filter-btn blog-category-btn selected mb-2 mr-2" data-category="All">All</button>
-                  {% assign all_categories = site.posts | map: 'categories' | flatten | uniq | sort %}
-                  {% for category in all_categories %}
-                    {% if category != "" %}
-                      <button class="filter-btn blog-category-btn mb-2 mr-2" data-category="{{ category }}">{{ category }}</button>
-                    {% endif %}
-                  {% endfor %}
+                <div class="filter-collapse-content" id="blog-category-filters-wrapper">
+                  <div class="d-flex flex-wrap" id="blog-category-filters">
+                    <button class="filter-btn blog-category-btn selected mb-2 mr-2" data-category="All">All</button>
+                    {% assign all_categories = site.posts | map: 'categories' | flatten | uniq | sort %}
+                    {% for category in all_categories %}
+                      {% if category != "" %}
+                        <button class="filter-btn blog-category-btn mb-2 mr-2" data-category="{{ category }}">{{ category }}</button>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6 mb-3">
-                <h6 class="filter-heading-horizontal">
+                <h6 class="filter-heading-horizontal filter-collapse-toggle" style="cursor: pointer; user-select: none; margin-bottom: 0.5rem;">
                   <i class="fas fa-tags"></i>
                   <span>Tags</span>
+                  <i class="fas fa-chevron-down filter-chevron" style="margin-left: auto; transition: transform 0.3s ease; font-size: 0.75rem; opacity: 0.7;"></i>
                 </h6>
-                <div class="filter-scroll-horizontal">
-                  <div class="d-flex flex-wrap" id="blog-tag-filters">
-                    <button class="filter-btn blog-tag-btn selected mb-2 mr-2" data-tag="All">All</button>
-                    <!-- Tags will be populated by JavaScript -->
+                <div class="filter-collapse-content" id="blog-tag-filters-wrapper">
+                  <div class="filter-scroll-horizontal">
+                    <div class="d-flex flex-wrap" id="blog-tag-filters">
+                      <button class="filter-btn blog-tag-btn selected mb-2 mr-2" data-tag="All">All</button>
+                      <!-- Tags will be populated by JavaScript -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -802,6 +808,59 @@ pagination:
   html[data-theme='dark'] .search-tag .remove-tag:hover {
     background: rgba(0, 0, 0, 0.2);
   }
+  
+  /* Collapsible filter sections */
+  .filter-collapse-toggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+  
+  .filter-collapse-toggle:hover {
+    opacity: 1;
+  }
+  
+  html[data-theme='light'] .filter-collapse-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  html[data-theme='dark'] .filter-collapse-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  .filter-collapse-toggle:active {
+    transform: scale(0.98);
+  }
+  
+  .filter-collapse-content {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease, 
+                margin 0.3s ease,
+                padding 0.3s ease;
+    opacity: 1;
+    padding-top: 0.5rem;
+  }
+  
+  .filter-collapse-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .filter-chevron {
+    transition: transform 0.3s ease;
+  }
+  
+  .filter-collapse-toggle.active .filter-chevron {
+    transform: rotate(180deg);
+  }
+  
+  .filter-collapse-toggle:hover .filter-chevron {
+    opacity: 1;
+  }
 </style>
 
 <script>
@@ -1447,5 +1506,95 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run initial filter to set up pagination correctly
     filterPosts();
   }, 100);
+  
+  // Collapsible filter sections functionality with localStorage
+  const collapseToggles = document.querySelectorAll('.filter-collapse-toggle');
+  
+  // Function to get section ID from toggle element
+  function getSectionId(toggle) {
+    const heading = toggle.querySelector('span');
+    if (heading) {
+      const text = heading.textContent.trim();
+      if (text === 'Categories') return 'blog-categories';
+      if (text === 'Tags') return 'blog-tags';
+    }
+    return null;
+  }
+  
+  // Function to save state to localStorage
+  function saveCollapseState(sectionId, isExpanded) {
+    try {
+      if (sectionId) {
+        const key = `blog-filter-section-${sectionId}`;
+        const value = isExpanded ? 'expanded' : 'collapsed';
+        localStorage.setItem(key, value);
+      }
+    } catch (e) {
+      console.warn('Failed to save filter section state to localStorage:', e);
+    }
+  }
+  
+  // Function to load state from localStorage
+  function loadCollapseState(sectionId, defaultValue) {
+    try {
+      if (sectionId) {
+        const key = `blog-filter-section-${sectionId}`;
+        const stored = localStorage.getItem(key);
+        if (stored === 'expanded') return true;
+        if (stored === 'collapsed') return false;
+      }
+    } catch (e) {
+      console.warn('Failed to load filter section state from localStorage:', e);
+    }
+    return defaultValue;
+  }
+  
+  // Initialize collapsible sections with saved state or defaults
+  collapseToggles.forEach(toggle => {
+    const sectionId = getSectionId(toggle);
+    const content = toggle.nextElementSibling;
+    
+    if (!sectionId || !content) return;
+    
+    // Default states: Categories expanded, Tags expanded
+    const defaultExpanded = true;
+    const isExpanded = loadCollapseState(sectionId, defaultExpanded);
+    
+    if (isExpanded) {
+      toggle.classList.add('active');
+      content.classList.remove('collapsed');
+    } else {
+      toggle.classList.remove('active');
+      content.classList.add('collapsed');
+    }
+  });
+  
+  // Add click handlers to save state
+  collapseToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const sectionId = getSectionId(this);
+      const content = this.nextElementSibling;
+      
+      if (!sectionId || !content) return;
+      
+      const isActive = this.classList.contains('active');
+      const newState = !isActive;
+      
+      // Update UI immediately
+      if (newState) {
+        this.classList.add('active');
+        content.classList.remove('collapsed');
+      } else {
+        this.classList.remove('active');
+        content.classList.add('collapsed');
+      }
+      
+      // Save state to localStorage
+      saveCollapseState(sectionId, newState);
+    });
+  });
 });
 </script>
