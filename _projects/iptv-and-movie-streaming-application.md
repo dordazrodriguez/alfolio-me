@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "TV and Movie Streaming Application"
+title: "Live TV and Movie Streaming Application"
 description: "Cross-platform application built with Flutter for streaming on-demand movies and live TV channels through HLS/HTTP links loaded from M3U8 files."
 category: 
   - 'Dev'
   - 'Web'
   - 'DevOps'
+  - 'Cybersecurity'
 img: assets/img/projects/iptv/mobile.png
 tags:
   - Flutter

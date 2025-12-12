@@ -14,10 +14,26 @@ layout: default
     
     <div class="project-meta">
       <div class="project-category">
-        <span class="badge">{{ page.category }}</span>
+        {% if page.category %}
+          {% if page.category.first %}
+            {% for cat in page.category %}
+              <span class="badge">{{ cat }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="badge">{{ page.category }}</span>
+          {% endif %}
+        {% endif %}
       </div>
       
-      <div class="project-links">
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="project-tags" style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        {% for tag in page.tags %}
+          <span class="badge badge-secondary" style="font-size: 0.85rem; padding: 0.35rem 0.75rem; font-weight: 500; border-radius: 4px;">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+      <div class="project-links" style="margin-top: 1rem;">
         {% if page.link %}
           {% assign link_url = page.link %}
           {% if link_url contains 'github.com' %}

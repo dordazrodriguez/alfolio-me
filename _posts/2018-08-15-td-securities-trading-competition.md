@@ -106,11 +106,6 @@ Interactions with TD Securities professionals provided perspective on:
 - **Industry trends**: Learning about evolving market structures, regulatory changes, and technological innovations
 - **Professional expectations**: Gaining insight into what it takes to succeed in a competitive industry
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0" style="text-align: center;">
-        {% include figure.liquid path="assets/img/TDInstagramDownloads/586712516181467782534288857244965228700151705n.webp" class="img-fluid rounded z-depth-1" max-width="500px" caption="TD Securities Trading Competition experience - memories from an incredible opportunity to compete on Wall Street" %}
-    </div>
-</div>
 
 ## Key Learnings
 

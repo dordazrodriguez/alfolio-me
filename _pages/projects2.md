@@ -2143,10 +2143,43 @@ horizontal: false
       resetFiltersAltBtn.addEventListener('click', resetFilters);
     }
     
-    // Filter section toggle
+    // Filter section toggle with localStorage persistence
     const filterToggle = document.getElementById('filter-toggle');
     const filterSection = document.getElementById('filter-section-horizontal');
     const toggleText = document.getElementById('toggle-text');
+    
+    // Function to save filter section visibility state
+    function saveFilterSectionState(isVisible) {
+      try {
+        localStorage.setItem('projects-filter-section-visible', isVisible ? 'true' : 'false');
+      } catch (e) {
+        console.warn('Failed to save filter section state:', e);
+      }
+    }
+    
+    // Function to load filter section visibility state
+    function loadFilterSectionState() {
+      try {
+        const stored = localStorage.getItem('projects-filter-section-visible');
+        if (stored === 'false') return false;
+        if (stored === 'true') return true;
+      } catch (e) {
+        console.warn('Failed to load filter section state:', e);
+      }
+      return true; // Default to visible
+    }
+    
+    // Initialize filter section state on page load
+    if (filterSection && toggleText) {
+      const isVisible = loadFilterSectionState();
+      if (!isVisible) {
+        filterSection.classList.add('hidden');
+        if (toggleText) toggleText.textContent = 'Show Filters';
+      } else {
+        filterSection.classList.remove('hidden');
+        if (toggleText) toggleText.textContent = 'Hide Filters';
+      }
+    }
     
     if (filterToggle && filterSection && toggleText) {
       filterToggle.addEventListener('click', function(e) {
@@ -2158,9 +2191,11 @@ horizontal: false
         if (isHidden) {
           filterSection.classList.remove('hidden');
           toggleText.textContent = 'Hide Filters';
+          saveFilterSectionState(true);
         } else {
           filterSection.classList.add('hidden');
           toggleText.textContent = 'Show Filters';
+          saveFilterSectionState(false);
         }
       });
     }
