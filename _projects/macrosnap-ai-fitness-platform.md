@@ -19,6 +19,7 @@ tags:
   - Machine Learning
   - GCP
   - AWS
+  - Data
 live: "https://macrosnap.tectgc.com"
 link: "https://macrosnap.tectgc.com"
 date: 2025-01-10
