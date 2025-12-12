@@ -7,6 +7,7 @@ category:
   - 'Quant'
   - 'AI'
   - 'DevOps'
+  - 'ML'
 img: https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png
 tags:
   - Python

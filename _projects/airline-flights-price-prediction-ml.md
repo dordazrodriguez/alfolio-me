@@ -5,6 +5,7 @@ description: "Machine learning model that predicts airline flight prices based o
 category: 
   - 'Data Science' 
   - 'AI'
+  - 'ML'
 img: assets/img/projects/flight_prediction_ML.gif
 tags:
   - Python
