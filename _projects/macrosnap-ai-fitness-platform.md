@@ -25,6 +25,7 @@ date: 2025-01-10
 show_date: true
 importance: 1
 ---
+<br/>
 
 <img src="{{ 'assets/img/projects/macrosnap/macrosnap_dashboard.png' | relative_url }}" alt="MacroSnap Dashboard" style="max-width: 80%;">
 

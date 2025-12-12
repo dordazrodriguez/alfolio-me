@@ -31,8 +31,6 @@ show_date: true
 importance: 1
 ---
 
-# Home SOC Lab - Security Operations Center Environment
-
 A production-ready, containerized Security Operations Center (SOC) lab environment designed for learning, testing, and professional development in cybersecurity operations.
 
 ## Overview
