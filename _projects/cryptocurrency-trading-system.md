@@ -26,6 +26,8 @@ show_date: true
 importance: 1
 ---
 
+Project Repo: <a href="https://github.com/dordazrodriguez/CryptoTradingSystem" targer="_blank"> https://github.com/dordazrodriguez/CryptoTradingSystem </a>
+
 ## Key Features
 
 - **Real-time Market Data Processing**: Continuous monitoring and processing of cryptocurrency market data

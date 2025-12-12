@@ -17,6 +17,15 @@ In August 2018, I had the extraordinary opportunity to participate in TD Securit
     </div>
 </div>
 
+<div class="row mt-3">
+    <div class="col-sm-6 mt-3 mt-md-0" style="text-align: center;">
+        {% include figure.liquid path="assets/img/TDInstagramDownloads/551745735182681719603047163569067021043467934n.jpg" class="img-fluid rounded z-depth-1" max-width="400px" caption="Trading floor tour at TD Securities New York headquarters" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0" style="text-align: center;">
+        {% include figure.liquid path="assets/img/TDInstagramDownloads/556235674185346556480413191712062355567587192n.jpg" class="img-fluid rounded z-depth-1" max-width="400px" caption="Inside TD Securities - exploring the professional trading environment" %}
+    </div>
+</div>
+
 ## The Selection Process: Competing for a Spot
 
 The competition's selection process was rigorous, designed to identify students with the analytical skills, quantitative aptitude, and mental fortitude required for professional trading. The application process evaluated:
@@ -81,12 +90,27 @@ The tour of TD Securities' New York headquarters offered a firsthand look at:
 - **Technology infrastructure**: The systems and platforms that enable high-frequency trading and real-time risk management
 - **Team dynamics**: How trading desks are organized and how information flows in a fast-paced environment
 
+<div class="row mt-3">
+    <div class="col-sm-6 mt-3 mt-md-0" style="text-align: center;">
+        {% include figure.liquid path="assets/img/TDInstagramDownloads/557085482183057039912185803002949234950198966n.jpg" class="img-fluid rounded z-depth-1" max-width="400px" caption="TD Securities headquarters - a glimpse into the professional trading world" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0" style="text-align: center;">
+        {% include figure.liquid path="assets/img/TDInstagramDownloads/560301211185299907080046807404005156632330910n.jpg" class="img-fluid rounded z-depth-1" max-width="400px" caption="Exploring the facilities and learning about trading operations" %}
+    </div>
+</div>
+
 ### Industry Insights
 
 Interactions with TD Securities professionals provided perspective on:
 - **Career paths**: Understanding different roles within trading, sales, and research
 - **Industry trends**: Learning about evolving market structures, regulatory changes, and technological innovations
 - **Professional expectations**: Gaining insight into what it takes to succeed in a competitive industry
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0" style="text-align: center;">
+        {% include figure.liquid path="assets/img/TDInstagramDownloads/586712516181467782534288857244965228700151705n.webp" class="img-fluid rounded z-depth-1" max-width="500px" caption="TD Securities Trading Competition experience - memories from an incredible opportunity to compete on Wall Street" %}
+    </div>
+</div>
 
 ## Key Learnings
 

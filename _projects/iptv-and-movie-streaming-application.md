@@ -5,6 +5,7 @@ description: "Cross-platform application built with Flutter for streaming on-dem
 category: 
   - 'Dev'
   - 'Web'
+  - 'DevOps'
 img: assets/img/projects/iptv/mobile.png
 tags:
   - Flutter

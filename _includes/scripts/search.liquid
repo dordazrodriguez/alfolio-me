@@ -75,6 +75,7 @@
       {%- for post in site.posts -%}
         {
           {%- assign title = post.title | escape -%}
+          {%- assign tags = post.tags | join: ' ' | downcase -%}
           id: "post-{{ title | slugify }}",
           {% if post.redirect == blank %}
             title: "{{ title }}",
@@ -85,8 +86,9 @@
           {% else %}
             title: "{{ title }}",
           {% endif %}
-          description: "{{ post.description | strip_html | strip_newlines | escape }}",
+          description: "{{ post.description | strip_html | strip_newlines | escape }}{% if tags %} {{ tags }}{% endif %}",
           section: "Posts",
+          keywords: "{{ title | downcase }} {{ post.description | strip_html | strip_newlines | downcase }}{% if tags %} {{ tags }}{% endif %}",
           handler: () => {
             {% if post.redirect == blank %}
               window.location.href = "{{ post.url | relative_url }}";
@@ -126,10 +128,12 @@
               {%- else -%}
                 {%- assign title = item.title | escape -%}
               {%- endif -%}
+              {%- assign item_tags = item.tags | join: ' ' | downcase -%}
               id: "{{ collection.label }}-{{ title | slugify }}",
               title: '{{ title | emojify }}',
-              description: "{{ item.description | strip_html | strip_newlines | escape }}",
+              description: "{{ item.description | strip_html | strip_newlines | escape }}{% if item_tags %} {{ item_tags }}{% endif %}",
               section: "{{ collection.label | capitalize }}",
+              keywords: "{{ title | downcase }} {{ item.description | strip_html | strip_newlines | downcase }}{% if item_tags %} {{ item_tags }}{% endif %}",
               {%- unless item.inline -%}
                 handler: () => {
                   window.location.href = "{{ item.url | relative_url }}";
@@ -595,5 +599,345 @@
         },
       {%- endif -%}
     ];
+    
+    // Custom relevance-based sorting for search results
+    // This ensures exact keyword matches appear first, regardless of section/category
+    (function() {
+      let lastQuery = '';
+      let sortInterval = null;
+      const originalData = [...ninja.data]; // Keep a copy of original data
+      
+      // Function to calculate relevance score
+      function calculateRelevanceScore(item, query) {
+        if (!query) return 0;
+        
+        const queryLower = query.toLowerCase().trim();
+        const queryWords = queryLower.split(/\s+/).filter(w => w.length > 0);
+        const title = (item.title || '').toLowerCase();
+        const desc = (item.description || '').toLowerCase();
+        const keywords = (item.keywords || '').toLowerCase();
+        const searchableText = `${title} ${desc} ${keywords}`.toLowerCase();
+        
+        let score = 0;
+        
+        // Exact title match gets highest score
+        if (title === queryLower) {
+          score += 1000;
+        }
+        // Title contains full query
+        else if (title.includes(queryLower)) {
+          score += 500;
+        }
+        // Title starts with query
+        else if (title.startsWith(queryLower)) {
+          score += 300;
+        }
+        
+        // Individual word matches in title (more words = higher score)
+        queryWords.forEach(word => {
+          if (title.includes(word)) {
+            score += 100;
+          }
+        });
+        
+        // Keywords field matches (high weight)
+        if (keywords.includes(queryLower)) {
+          score += 200;
+        }
+        queryWords.forEach(word => {
+          if (keywords.includes(word)) {
+            score += 75;
+          }
+        });
+        
+        // Description matches (lower weight than title)
+        if (desc.includes(queryLower)) {
+          score += 50;
+        }
+        queryWords.forEach(word => {
+          if (desc.includes(word)) {
+            score += 25;
+          }
+        });
+        
+        return score;
+      }
+      
+      // Function to re-sort results by relevance
+      function resortResultsByRelevance(query) {
+        if (!query || query.trim() === '') return;
+        
+        const queryLower = query.toLowerCase().trim();
+        
+        // Access ninja-keys internal filtered results
+        setTimeout(() => {
+          try {
+            const shadowRoot = ninja.shadowRoot;
+            if (!shadowRoot) return;
+            
+            // Try multiple selectors to find the results container
+            let resultsContainer = shadowRoot.querySelector('[role="listbox"]');
+            if (!resultsContainer) {
+              resultsContainer = shadowRoot.querySelector('ul');
+            }
+            if (!resultsContainer) {
+              resultsContainer = shadowRoot.querySelector('div[class*="list"]');
+            }
+            if (!resultsContainer) {
+              // Try to find any container with multiple children
+              const allDivs = shadowRoot.querySelectorAll('div');
+              for (let div of allDivs) {
+                if (div.children.length > 2) {
+                  resultsContainer = div;
+                  break;
+                }
+              }
+            }
+            
+            if (!resultsContainer) {
+              console.log('Could not find results container');
+              return;
+            }
+            
+            // Get ALL children recursively - ninja-keys might nest items
+            const allElements = Array.from(resultsContainer.querySelectorAll('*'));
+            const resultItems = [];
+            
+            // Find items that look like search results (have click handlers or specific structure)
+            allElements.forEach(el => {
+              // Skip if it's a section header or container
+              const text = (el.textContent || '').trim();
+              const isHeader = ['Projects', 'Posts', 'Navigation', 'News', 'Theme', 'Socials'].some(s => text === s);
+              
+              if (!isHeader && el.children.length <= 2 && text.length > 0) {
+                // Check if this element has a title-like structure
+                const hasTitle = el.querySelector('[class*="title"]') || 
+                                el.querySelector('h3, h4, h5') ||
+                                (el.textContent && el.textContent.length > 5);
+                
+                if (hasTitle && !resultItems.includes(el)) {
+                  resultItems.push(el);
+                }
+              }
+            });
+            
+            // If we didn't find nested items, use direct children
+            if (resultItems.length === 0) {
+              resultItems.push(...Array.from(resultsContainer.children));
+            }
+            
+            if (resultItems.length === 0) {
+              console.log('No result items found');
+              return;
+            }
+            
+            // Calculate scores and match with data
+            const itemsWithScores = resultItems.map(element => {
+              // Extract text content
+              const fullText = (element.textContent || '').trim();
+              const lines = fullText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+              const titleText = lines[0] || fullText.substring(0, 100);
+              const descText = lines.slice(1).join(' ') || '';
+              
+              // Find matching data item
+              let dataItem = null;
+              for (let d of ninja.data) {
+                const dTitle = (d.title || '').trim();
+                if (dTitle && (
+                  dTitle === titleText ||
+                  dTitle.toLowerCase() === titleText.toLowerCase() ||
+                  titleText.toLowerCase().includes(dTitle.toLowerCase()) ||
+                  dTitle.toLowerCase().includes(titleText.toLowerCase())
+                )) {
+                  dataItem = d;
+                  break;
+                }
+              }
+              
+              if (!dataItem) {
+                dataItem = { 
+                  title: titleText, 
+                  description: descText, 
+                  keywords: `${titleText} ${descText}`.toLowerCase() 
+                };
+              }
+              
+              const score = calculateRelevanceScore(dataItem, queryLower);
+              
+              return { element, score, dataItem, titleText };
+            });
+            
+            // Filter out items with score 0 (not relevant)
+            const relevantItems = itemsWithScores.filter(item => item.score > 0);
+            
+            // Sort by score (highest first)
+            relevantItems.sort((a, b) => b.score - a.score);
+            
+            // Instead of clearing, try to reorder in place
+            // First, collect all parent containers (sections)
+            const sectionContainers = new Map();
+            relevantItems.forEach(({ element }) => {
+              let parent = element.parentElement;
+              while (parent && parent !== resultsContainer) {
+                if (!sectionContainers.has(parent)) {
+                  sectionContainers.set(parent, []);
+                }
+                parent = parent.parentElement;
+              }
+            });
+            
+            // If we have section containers, we need to flatten
+            // Otherwise, just reorder direct children
+            if (sectionContainers.size === 0) {
+              // Simple case: direct children
+              relevantItems.forEach(({ element }) => {
+                resultsContainer.appendChild(element);
+              });
+            } else {
+              // Complex case: we have nested sections
+              // Try to find the actual item containers
+              const allItemContainers = [];
+              sectionContainers.forEach((items, container) => {
+                const children = Array.from(container.children);
+                children.forEach(child => {
+                  if (relevantItems.some(ri => ri.element === child || child.contains(ri.element))) {
+                    allItemContainers.push(child);
+                  }
+                });
+              });
+              
+              // Create a flat list by extracting items from sections
+              const flatList = document.createDocumentFragment();
+              relevantItems.forEach(({ element }) => {
+                // Try to find the actual clickable item
+                let itemToMove = element;
+                if (element.querySelector('[role="option"]')) {
+                  itemToMove = element.querySelector('[role="option"]');
+                }
+                flatList.appendChild(itemToMove.cloneNode(true));
+              });
+              
+              // Try to replace the container content
+              if (resultsContainer.children.length > 0) {
+                // Clear existing content
+                while (resultsContainer.firstChild) {
+                  resultsContainer.removeChild(resultsContainer.firstChild);
+                }
+                resultsContainer.appendChild(flatList);
+              }
+            }
+            
+            console.log(`Re-sorted ${relevantItems.length} results for query: "${query}"`, relevantItems.map(i => ({ title: i.titleText, score: i.score })));
+            
+          } catch (e) {
+            console.warn('Error re-sorting search results:', e);
+          }
+        }, 300);
+      }
+      
+      // Listen for search input changes and DOM mutations
+      function setupSearchListener() {
+        const shadowRoot = ninja.shadowRoot;
+        if (!shadowRoot) {
+          // Retry if shadow root not ready
+          setTimeout(setupSearchListener, 100);
+          return;
+        }
+        
+        const searchInput = shadowRoot.querySelector('input[type="text"]');
+        if (searchInput) {
+          // Track current query
+          let currentQuery = '';
+          
+          searchInput.addEventListener('input', function(e) {
+            currentQuery = this.value;
+            lastQuery = currentQuery;
+            
+            const queryLower = currentQuery.toLowerCase().trim();
+            
+            if (queryLower) {
+              // Modify data to prioritize relevance: calculate scores and sort data array
+              const dataWithScores = originalData.map(item => {
+                const score = calculateRelevanceScore(item, queryLower);
+                return {
+                  ...item,
+                  _relevanceScore: score,
+                  // Remove section for highly relevant items so they appear together
+                  section: score > 100 ? 'Results' : item.section
+                };
+              });
+              
+              // Sort by relevance score (highest first)
+              dataWithScores.sort((a, b) => b._relevanceScore - a._relevanceScore);
+              
+              // Remove score property and update ninja.data
+              ninja.data = dataWithScores.map(({ _relevanceScore, ...item }) => item);
+              
+              // Force ninja-keys to refresh
+              if (ninja.requestUpdate) {
+                ninja.requestUpdate();
+              }
+              
+              // Also trigger DOM re-sort as backup
+              if (sortInterval) {
+                clearTimeout(sortInterval);
+              }
+              sortInterval = setTimeout(() => {
+                resortResultsByRelevance(currentQuery);
+              }, 300);
+            } else {
+              // Reset to original data when query is empty
+              ninja.data = [...originalData];
+              if (ninja.requestUpdate) {
+                ninja.requestUpdate();
+              }
+            }
+          });
+          
+          // Also use MutationObserver to catch any DOM changes
+          const observer = new MutationObserver((mutations) => {
+            // Only act if there are actual changes and we have a query
+            if (lastQuery && lastQuery.trim()) {
+              let hasRelevantChanges = false;
+              
+              mutations.forEach(mutation => {
+                if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
+                  hasRelevantChanges = true;
+                }
+              });
+              
+              if (hasRelevantChanges) {
+                // Debounce the resort
+                if (sortInterval) {
+                  clearTimeout(sortInterval);
+                }
+                sortInterval = setTimeout(() => {
+                  resortResultsByRelevance(lastQuery);
+                }, 200);
+              }
+            }
+          });
+          
+          // Observe the entire shadow root for changes
+          observer.observe(shadowRoot, {
+            childList: true,
+            subtree: true
+          });
+          
+        } else {
+          // Retry if input not found
+          setTimeout(setupSearchListener, 100);
+        }
+      }
+      
+      // Start listening once ninja-keys is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(setupSearchListener, 500);
+        });
+      } else {
+        setTimeout(setupSearchListener, 500);
+      }
+    })();
   </script>
 {% endif %}
