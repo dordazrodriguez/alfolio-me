@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Automated Self-Improving Crypto Trading System"
+title: "Automated Self-Improving Cryptocurrency Trading System"
 description: "A Full-stack automated trading system with real-time market data processing, 26 technical indicators, and 170+ engineered ML features. Features Flask REST API, React dashboard, Random Forest/LightGBM models, PPO reinforcement learning agent, and ATR-based risk management."
 category: 
   - 'Financial'
@@ -54,212 +54,457 @@ Project Repo: <a href="https://github.com/dordazrodriguez/CryptoTradingSystem" t
 
 ## Screenshots
 
-<div class="project-image-carousel-container" style="margin: 2rem 0;">
-  <!-- Main Image Display -->
-  <div class="main-image-container" style="position: relative; text-align: center; margin-bottom: 2rem; background: #f8f9fa; padding: 2rem; border-radius: 8px;">
-    <!-- Left Arrow -->
-    <button class="carousel-nav-arrow carousel-nav-left" id="carousel-prev" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 10; transition: background 0.3s;">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    
-    <!-- Right Arrow -->
-    <button class="carousel-nav-arrow carousel-nav-right" id="carousel-next" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 10; transition: background 0.3s;">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-    
-    <img id="main-display-image" src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="max-width: 100%; max-height: 600px; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <p id="main-image-caption" class="mt-3" style="color: #666; font-size: 0.9rem; font-style: italic;">Main Dashboard</p>
-  </div>
-  
-  <!-- Thumbnail Carousel -->
-  <div class="thumbnail-carousel-wrapper" style="position: relative;">
-    <div class="thumbnail-carousel" id="thumbnail-carousel" style="display: flex; gap: 0.75rem; overflow-x: auto; padding: 1rem 0; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
-      <div class="thumbnail-item active" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" data-caption="Main Dashboard" style="flex-shrink: 0; cursor: pointer; border: 3px solid #0284c7; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+<div class="project-screenshots-grid" style="margin: 2rem 0;">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" data-caption="Main Dashboard" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard.png" alt="Main Dashboard" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
+            <i class="fas fa-expand" style="color: white; font-size: 2rem;"></i>
+          </div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Main Dashboard</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" data-caption="Placed Trades History" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Placed Trades History" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" data-caption="Placed Trades History" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/Dashboard-Trades2.png" alt="Placed Trades History" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Placed Trades History</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" data-caption="Alpaca Paper Trade Dashboard" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" data-caption="Alpaca Paper Trade Dashboard" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/alpaca_paper_trade_dashboard.png" alt="Alpaca Paper Trade Dashboard" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Alpaca Paper Trade Dashboard</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" data-caption="Performance Indicators" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" data-caption="Docker Deployment Services" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" alt="Docker Deployment Services" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Docker Deployment Services</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" data-caption="ML Validation Metrics" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" data-caption="Docker Details" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" alt="Docker Details" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Docker Details</p>
       </div>
-      <div class="thumbnail-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" data-caption="Docker Deployment" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/WGUCapstone/Docker.png" alt="Docker Deployment" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" data-caption="Console Output" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" alt="Console Output" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Console Output</p>
       </div>
-      <div class="thumbnail-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" data-caption="Docker Details" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/blob/main/Screenshots/WGUCapstone/Docker%20Details.png?raw=true" alt="Docker Details" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" data-caption="API Test 1" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" alt="API Test 1" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 1</p>
       </div>
-      <div class="thumbnail-item" data-image="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" data-caption="Console Output" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://github.com/dordazrodriguez/CryptoTradingSystem/raw/main/Screenshots/Screenshot%202025-11-02%20160425.png" alt="Console Output" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" data-caption="API Test 2" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" alt="API Test 2" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 2</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" data-caption="API Test 1" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131446.png" alt="API Test 1" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" data-caption="API Test 3" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" alt="API Test 3" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 3</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" data-caption="API Test 2" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131546.png" alt="API Test 2" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" data-caption="API Test 4" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" alt="API Test 4" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 4</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" data-caption="API Test 3" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131640.png" alt="API Test 3" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" data-caption="API Test 5" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" alt="API Test 5" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 5</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" data-caption="API Test 4" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20131702.png" alt="API Test 4" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" data-caption="API Test 6" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" alt="API Test 6" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">API Test 6</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" data-caption="API Test 5" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132637.png" alt="API Test 5" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" data-caption="Performance Indicators" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/performance_indicators.png" alt="Performance Indicators" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">Performance Indicators</p>
       </div>
-      <div class="thumbnail-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" data-caption="API Test 6" style="flex-shrink: 0; cursor: pointer; border: 3px solid transparent; border-radius: 4px; padding: 2px; transition: transform 0.2s;">
-        <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/WGUCapstone/Task2.2%20API%20Tests/Screenshot%202025-10-31%20132822.png" alt="API Test 6" style="width: 120px; height: 80px; object-fit: cover; border-radius: 2px; display: block;">
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="screenshot-item" data-image="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" data-caption="ML Validation Metrics" style="cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;">
+        <div style="position: relative;">
+          <img src="https://raw.githubusercontent.com/dordazrodriguez/CryptoTradingSystem/main/Screenshots/validation_ml_metrics.png" alt="ML Validation Metrics" class="img-fluid" style="width: 100%; height: auto; display: block;">
+          <div class="screenshot-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+        </div>
+        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; color: #666; padding: 0.5rem;">ML Validation Metrics</p>
       </div>
     </div>
   </div>
 </div>
 
 <style>
-  .thumbnail-item:hover {
-    transform: scale(1.1);
-    border-color: #0284c7 !important;
+  .screenshot-item {
+    position: relative;
   }
   
-  .thumbnail-item.active {
-    border-color: #0284c7 !important;
-    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+  .screenshot-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
   }
   
-  .carousel-nav-arrow:hover {
-    background: rgba(0,0,0,0.8) !important;
+  .screenshot-item:hover .screenshot-overlay {
+    opacity: 1;
   }
   
-  html[data-theme='dark'] .carousel-nav-arrow {
-    background: rgba(255,255,255,0.2) !important;
-  }
-  
-  html[data-theme='dark'] .carousel-nav-arrow:hover {
-    background: rgba(255,255,255,0.4) !important;
-  }
-  
-  .thumbnail-carousel::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .thumbnail-carousel::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-  
-  .thumbnail-carousel::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-  
-  .thumbnail-carousel::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  html[data-theme='dark'] .main-image-container {
-    background: #1e293b;
-  }
-  
-  html[data-theme='dark'] .main-image-container p {
+  html[data-theme='dark'] .screenshot-item p {
     color: #cbd5e1;
   }
   
-  html[data-theme='dark'] .thumbnail-carousel::-webkit-scrollbar-track {
-    background: #334155;
+  /* Image Modal Styles */
+  #image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
-  html[data-theme='dark'] .thumbnail-carousel::-webkit-scrollbar-thumb {
-    background: #64748b;
+  #image-modal.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+  }
+  
+  .modal-image-container {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  
+  .modal-image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  
+  .modal-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+  
+  .modal-close:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  .modal-nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(0,0,0,0.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+    user-select: none;
+  }
+  
+  .modal-nav-arrow:hover {
+    background: rgba(0,0,0,0.8);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .modal-nav-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  .modal-nav-arrow.prev {
+    left: 30px;
+  }
+  
+  .modal-nav-arrow.next {
+    right: 30px;
+  }
+  
+  .modal-nav-arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  .modal-caption {
+    position: relative;
+    color: white;
+    background: rgba(0,0,0,0.7);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 90%;
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
+  
+  .modal-counter {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10000;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-image-container {
+      padding: 0.5rem;
+    }
+    
+    .modal-close {
+      top: 10px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      font-size: 30px;
+    }
+    
+    .modal-nav-arrow {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+    }
+    
+    .modal-nav-arrow.prev {
+      left: 10px;
+    }
+    
+    .modal-nav-arrow.next {
+      right: 10px;
+    }
+    
+    .modal-counter {
+      top: 10px;
+      left: 15px;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+    
+    .modal-caption {
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+    }
   }
 </style>
 
+<!-- Image Modal -->
+<div id="image-modal">
+  <span class="modal-close">&times;</span>
+  <div class="modal-counter">
+    <span id="current-image-index">1</span> / <span id="total-images-count">14</span>
+  </div>
+  <div class="modal-nav-arrow prev" id="modal-prev">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <div class="modal-nav-arrow next" id="modal-next">
+    <i class="fas fa-chevron-right"></i>
+  </div>
+  <div class="modal-image-container">
+    <img id="modal-image" src="" alt="Screenshot">
+  </div>
+  <div class="modal-caption" id="modal-caption"></div>
+</div>
+
 <script>
 (function() {
-  const mainImage = document.getElementById('main-display-image');
-  const mainCaption = document.getElementById('main-image-caption');
-  const thumbnails = document.querySelectorAll('.thumbnail-item');
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
+  const screenshots = Array.from(document.querySelectorAll('.screenshot-item'));
+  const modal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalCaption = document.getElementById('modal-caption');
+  const closeBtn = document.querySelector('.modal-close');
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  const currentIndexSpan = document.getElementById('current-image-index');
+  const totalImagesSpan = document.getElementById('total-images-count');
   
   let currentIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 50; // Minimum distance for swipe
   
-  function updateMainImage(index, shouldScroll = true) {
-    // Remove active class from all thumbnails
-    thumbnails.forEach(t => t.classList.remove('active'));
+  // Initialize total count
+  totalImagesSpan.textContent = screenshots.length;
+  
+  function getImageData(index) {
+    const item = screenshots[index];
+    return {
+      url: item.getAttribute('data-image'),
+      caption: item.getAttribute('data-caption')
+    };
+  }
+  
+  function updateModal(index) {
+    const data = getImageData(index);
+    modalImage.src = data.url;
+    modalCaption.textContent = data.caption;
+    currentIndexSpan.textContent = index + 1;
     
-    // Add active class to current thumbnail
-    if (thumbnails[index]) {
-      thumbnails[index].classList.add('active');
-      
-      // Update main image and caption
-      const imageUrl = thumbnails[index].getAttribute('data-image');
-      const caption = thumbnails[index].getAttribute('data-caption');
-      
-      mainImage.src = imageUrl;
-      mainCaption.textContent = caption;
-      
-      // Only scroll thumbnail into view if explicitly requested (user interaction)
-      // This prevents auto-scrolling on page load
-      if (shouldScroll) {
-        // Scroll within the thumbnail carousel container only, not the whole page
-        const thumbnailCarousel = document.getElementById('thumbnail-carousel');
-        if (thumbnailCarousel && thumbnails[index]) {
-          const thumbRect = thumbnails[index].getBoundingClientRect();
-          const carouselRect = thumbnailCarousel.getBoundingClientRect();
-          
-          // Only scroll if thumbnail is not fully visible
-          if (thumbRect.left < carouselRect.left || thumbRect.right > carouselRect.right) {
-            thumbnails[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        }
-      }
+    // Update arrow states
+    if (prevBtn) {
+      prevBtn.classList.toggle('disabled', index === 0);
+    }
+    if (nextBtn) {
+      nextBtn.classList.toggle('disabled', index === screenshots.length - 1);
     }
   }
   
+  function openModal(index) {
+    currentIndex = index;
+    updateModal(currentIndex);
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
   function showNext() {
-    currentIndex = (currentIndex + 1) % thumbnails.length;
-    updateMainImage(currentIndex, true);
+    if (currentIndex < screenshots.length - 1) {
+      currentIndex++;
+      updateModal(currentIndex);
+    }
   }
   
   function showPrev() {
-    currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-    updateMainImage(currentIndex, true);
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateModal(currentIndex);
+    }
   }
   
-  // Thumbnail click handlers
-  thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener('click', function() {
-      currentIndex = index;
-      updateMainImage(currentIndex, true);
+  // Add click handlers to all screenshots
+  screenshots.forEach((item, index) => {
+    item.addEventListener('click', function() {
+      openModal(index);
     });
   });
   
-  // Arrow button handlers
+  // Navigation buttons
   if (prevBtn) {
-    prevBtn.addEventListener('click', showPrev);
+    prevBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showPrev();
+    });
   }
   
   if (nextBtn) {
-    nextBtn.addEventListener('click', showNext);
+    nextBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showNext();
+    });
   }
+  
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+  
+  // Close on background click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
   
   // Keyboard navigation
   document.addEventListener('keydown', function(e) {
-    // Only handle if carousel is in view
-    const carouselContainer = document.querySelector('.project-image-carousel-container');
-    if (!carouselContainer) return;
+    if (!modal.classList.contains('active')) return;
     
-    const rect = carouselContainer.getBoundingClientRect();
-    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-    
-    if (!isInView) return;
-    
-    if (e.key === 'ArrowLeft') {
+    if (e.key === 'Escape') {
+      closeModal();
+    } else if (e.key === 'ArrowLeft') {
       e.preventDefault();
       showPrev();
     } else if (e.key === 'ArrowRight') {
@@ -268,14 +513,36 @@ Project Repo: <a href="https://github.com/dordazrodriguez/CryptoTradingSystem" t
     }
   });
   
-  // Initialize with first image active (without scrolling)
-  // Wait for page to be fully loaded before initializing
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(() => updateMainImage(0, false), 100);
-    });
-  } else {
-    setTimeout(() => updateMainImage(0, false), 100);
+  // Swipe gesture support
+  const modalImageContainer = document.querySelector('.modal-image-container');
+  
+  if (modalImageContainer) {
+    modalImageContainer.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    modalImageContainer.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  function handleSwipe() {
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next image
+        showNext();
+      } else {
+        // Swipe right - previous image
+        showPrev();
+      }
+    }
+    
+    // Reset
+    touchStartX = 0;
+    touchEndX = 0;
   }
 })();
 </script>

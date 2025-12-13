@@ -27,7 +27,7 @@ One of the most transformative aspects of this role was gaining access to and pr
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/blogs/Snapchat-656144900.mp4" class="img-fluid rounded z-depth-1" controls=true caption="After-hours equity research session using Bloomberg Terminal - demonstrating the dedication required to identify alpha-generating opportunities" %}
+        {% include video.liquid path="assets/img/blogs/Snapchat-656144900.mp4" class="img-fluid rounded z-depth-1" controls=true caption="After-hours equity research session" %}
     </div>
 </div>
 
