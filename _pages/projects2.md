@@ -231,23 +231,23 @@ horizontal: false
   /* Enhanced Filter Card Styling */
   .filter-card-horizontal {
     border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    box-shadow: none !important;
     border-radius: 8px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
   }
   
   .filter-card-horizontal:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none !important;
   }
   
   html[data-theme='light'] .filter-card-horizontal {
-    background: #ffffff;
+    background: transparent;
     border: 1px solid rgba(0, 0, 0, 0.08);
   }
   
   html[data-theme='dark'] .filter-card-horizontal {
-    background: #1e293b;
+    background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
   

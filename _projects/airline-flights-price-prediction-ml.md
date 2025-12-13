@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Airline Flights Price Prediction using Machine Learning"
+title: "Airline Flights Analysis and Prediction using Machine Learning"
 description: "Machine learning model that predicts airline flight prices based on various factors including route, timing, and stops."
 category: 
   - 'Data Science' 
