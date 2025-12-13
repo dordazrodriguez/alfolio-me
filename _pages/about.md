@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /about/
 subtitle: Software Engineer | Full-Stack Developer | Data Scientist | AI/ML Enthusiast
-nav: true
+nav: false
 nav_order: 2
 
 profile:
