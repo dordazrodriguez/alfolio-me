@@ -33,7 +33,7 @@ importance: 1
 ---
 <br/>
 
-A comprehensive cross-platform application that unifies multiple Git hosting services (GitHub, GitLab, Gitea) into a single, powerful interface for managing repositories across all your accounts.
+<!-- A comprehensive cross-platform application that unifies multiple Git hosting services (GitHub, GitLab, Gitea) into a single, powerful interface for managing repositories across all your accounts. -->
 
 ## Screenshots
 
